@@ -19,7 +19,7 @@ $(document).ready(function(){
             $(this).setAttribute('color', 'green');
         },
         function(){
-            this.setAttribute('color', '#4CC3D9');            
+            $(this).setAttribute('color', '#4CC3D9');            
         }
     );
 });
