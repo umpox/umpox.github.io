@@ -1,5 +1,7 @@
 var box = document.getElementsByTagName('a-box');
 
+alert('hey');
+
 var changeColor = function() {
   this.setAttribute('color', 'green');
 };
