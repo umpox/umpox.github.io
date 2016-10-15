@@ -4,5 +4,5 @@ $(document).ready(function(){
         this.setAttribute('color', 'green');
     };
 
-    $('a-box').hover(changeColor);
+    $('a-box').hover(changeColor());
 });
