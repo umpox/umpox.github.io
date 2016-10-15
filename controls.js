@@ -11,7 +11,8 @@ $(document).ready(function(){
     };
 
     for (var i = 0; i < box.length; i++) {
-        box[i].addEventListener('mouseenter', changeColor, false);
-        box[i].addEventListener('mouseleave', returnColor, false);
+        box[i].mouseover(changeColor);
+        //box[i].addEventListener('mouseenter', changeColor, false);
+        //box[i].addEventListener('mouseleave', returnColor, false);
     }
 });
