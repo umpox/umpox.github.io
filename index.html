@@ -1,54 +1,21 @@
 <html>
-  <head>
-    <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-    <script src="webvr-polyfill.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
-        crossorigin="anonymous"></script>
-    <script src="js/controls.js"></script>
-  </head>
+    <head>
+        <link 
+            rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+            crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+    </head>
     <body>
-        <a-scene vr-mode-ui="enabled: true" stats>
-            <a-camera wasd-controls-enabled="false" look-controls-enabled="true">
-                <a-cursor color="#4CC3D9" fuse="true" timeout="10"></a-cursor>
-            </a-camera>
-
-            <!-- 1ST ROW -->
-            <a-box y="5" x="1" position="-0.7 2.4 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="5" x="2" position="-0.35 2.4 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="5" x="3" position="0 2.4 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="5" x="4" position="0.35 2.4 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="5" x="5" position="0.7 2.4 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-
-            <!-- 2ND ROW -->
-            <a-box y="4" x="1" position="-0.7 2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="4" x="2" position="-0.35 2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="4" x="3" position="0 2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="4" x="4" position="0.35 2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="4" x="5" position="0.7 2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-
-            <!-- 3RD ROW -->
-            <a-box y="3" x="1" position="-0.7 1.6 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="3" x="2" position="-0.35 1.6 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="3" x="3" position="0 1.6 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="3" x="4" position="0.35 1.6 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="3" x="5" position="0.7 1.6 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-
-            <!-- 4TH ROW -->
-            <a-box y="2" x="1" position="-0.7 1.2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="2" x="2" position="-0.35 1.2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="2" x="3" position="0 1.2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="2" x="4" position="0.35 1.2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="2" x="5" position="0.7 1.2 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-
-            <!-- BOTTOM ROW -->
-            <a-box y="1" x="1" position="-0.7 0.8 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="1" x="2" position="-0.35 0.8 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="1" x="3" position="0 0.8 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="1" x="4" position="0.35 0.8 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-            <a-box y="1" x="5" position="0.7 0.8 -1.5" rotation="0" width="0.3" height="0.3" depth="0.05" color="#4CC3D9"></a-box>
-        
-        <a-sky color="lightgreen"></a-sky>
-        </a-scene>
+        <div class="container-fluid" id="appBlock">
+            <div class="row" id="menuOptions">
+                <div class="col-sm-12">
+                    <a href="VRgame.html" type="button" class="menuBtn btn btn-primary btn-lg btn-block">Login</a>
+                    <a href="" type="button" class="menuBtn btn btn-default btn-lg btn-block">Register</a>
+                </div>               
+            </div>
+        </div>
     </body>
 </html>
