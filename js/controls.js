@@ -55,19 +55,19 @@ $(document).ready(function(){
         //Determine if there is a box alongside current box, if so change its colour
         if (y_cord !== max_y) {
             aboveBox = document.querySelectorAll('[y="' + ( parseInt(y_cord)+1 ) + '"][x="' + x_cord + '"]');
-            aboveBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.1 1.1 1.1"></a-animation>';
+            aboveBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
         }
         if (y_cord !== min_y) {
             belowBox = document.querySelectorAll('[y="' + ( parseInt(y_cord) - 1 ) + '"][x="' + x_cord + '"]');
-            belowBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.1 1.1 1.1"></a-animation>';
+            belowBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
         }
         if (x_cord !== min_x) {
             leftBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) - 1 ) + '"]');
-            leftBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.1 1.1 1.1"></a-animation>';
+            leftBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
         }
         if (x_cord !== max_x) {
             rightBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) + 1 ) + '"]');
-            rightBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.1 1.1 1.1"></a-animation>';
+            rightBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
         }
     };
 
