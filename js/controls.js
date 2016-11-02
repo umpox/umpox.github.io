@@ -13,7 +13,14 @@ $(document).ready(function(){
         //DEMO CODE REPLACE SOON
         this.setAttribute('color', '#88898c');
         var oldBox = document.querySelectorAll('[y="' + ( parseInt(y_cord)) + '"][x="' + x_cord + '"]');
-        oldBox[0].setAttribute('color', '#1c1c1f');
+        //DEMO CODE REPLACE SOON
+        if (this.getAttribute('active') === "true") {
+            oldBox[0].setAttribute('color', '#1c1c1f');
+        }
+        else {
+            oldBox[0].setAttribute('color', '#dfe0e6');
+        }
+        //DEMO CODE REPLACE SOON
         aboveBox[0].innerHTML = '';
         aboveBox[0].setAttribute('scale', '1');
         belowBox[0].innerHTML = '';
