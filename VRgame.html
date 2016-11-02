@@ -8,9 +8,15 @@
     <script src="js/controls.js"></script>
   </head>
     <body>
-        <a-scene vr-mode-ui="enabled: true" stats>
+        <a-scene vr-mode-ui="enabled: true">
             <a-camera wasd-controls-enabled="false" look-controls-enabled="true">
-                <a-cursor   fuse="true" timeout="10"></a-cursor>
+                <a-entity id="cursor"
+                        position="0 0 -1.45"
+                        geometry="primitive: ring; radiusOuter: 0.03; radiusInner: 0.02;"
+                        material="color: red; shader: flat" cursor="fuse: true; fuseTimeout: 750">
+                        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                            fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="750"></a-animation>
+                </a-entity>
             </a-camera>
 
             <!-- 1ST ROW -->
