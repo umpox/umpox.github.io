@@ -6,14 +6,77 @@
             integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
             crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
+            crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <script src="js/menuLogic.js"></script>
     </head>
     <body>
         <div class="container-fluid" id="appBlock">
             <div class="row" id="menuOptions">
-                <div class="col-sm-12">
-                    <a href="VRgame.html" type="button" class="menuBtn btn btn-primary btn-lg btn-block">Login</a>
-                    <a href="" type="button" class="menuBtn btn btn-default btn-lg btn-block">Register</a>
+                <div class="col-xs-12 menuContainer">
+
+                    <div id="mainLogo">
+                        <img src="resources/logo.png"></img>
+                    </div>
+
+                    <div id="mainMenu">
+                        <button id="mainMenu-loginBtn" type="button" onclick="navigateLogin()" class="menuBtn btn btn-primary btn-lg btn-block">
+                            Login
+                        </button>
+                        <button id="mainMenu-registerBtn" type="button" onclick="navigateRegister()" class="menuBtn btn btn-default btn-lg btn-block">
+                            Register
+                        </button>                        
+                    </div>
+
+                    <div id="mainMenu-loginMenu" style="display: none">
+                        <div class="form-group row mainMenu-input">
+                            <input type="email" class="form-control" placeholder="Enter email"> 
+                        </div>    
+                        <div class="form-group row mainMenu-input">
+                            <input type="password" class="form-control" placeholder="Enter password">  
+                        </div>
+
+                        <div id="mainMenu-navButtons">
+                            <button id="mainMenu-loginBtn" type="submit" onclick="loginUser()" class="menuBtn btn btn-primary btn-lg btn-block">
+                                Submit
+                            </button>                               
+                            <button id="mainMenu-backBtn" type="button" onclick="navigateMenu()" class="menuBtn btn btn-default btn-lg btn-block">
+                                Back
+                            </button>                               
+                        </div>                       
+                    </div>
+
+                    <div id="mainMenu-registerMenu" style="display: none">
+                        <div class="form-group row mainMenu-input">
+                            <input type="email" class="form-control" placeholder="Enter email"> 
+                        </div>    
+                        <div class="form-group row mainMenu-input">
+                            <input type="password" class="form-control" placeholder="Enter password">  
+                        </div>
+
+                        <div id="mainMenu-navButtons">
+                            <button id="mainMenu-loginBtn" onsubmit="registerUser()" type="submit" class="menuBtn btn btn-primary btn-lg btn-block">
+                                Register
+                            </button>                               
+                            <button id="mainMenu-backBtn" type="button" onclick="navigateMenu()" class="menuBtn btn btn-default btn-lg btn-block">
+                                Back
+                            </button>                               
+                        </div>                        
+                    </div>  
+                    
+                    <div id="controls" style="display: none" action="VRgame.html">
+                        <form action="VRgame.html">
+                            <button id="controls-VR" type="submit" class="menuBtn btn btn-primary btn-lg btn-block">
+                                VR
+                            </button>                            
+                        </form>
+                        <button id="controls-2D" type="submit" class="menuBtn btn btn-default btn-lg btn-block">
+                            2D
+                        </button>                                              
+                    </div>
+
                 </div>               
             </div>
         </div>

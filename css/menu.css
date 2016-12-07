@@ -8,14 +8,53 @@
 }
 
 #appBlock #menuOptions {
-    position: absolute;
-    top: 50%;
-    height: 100px;
-    width: 100%;
-    margin-top: -50px;
-    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .menuBtn {
     margin-bottom: 10px;
+}
+
+.menuBtn #mainMenu-registerBtn {
+    color: #337ab7;
+}
+
+.mainMenu-input {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.menuContainer {
+    float: none;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#mainLogo img {
+    width: 75%;
+    display: block;
+    margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+    #mainLogo img {
+        width: 50%;
+    }
+
+    #mainMenu-navButtons button {
+        width: 48%;
+        display: inline-block;
+    }
+
+    #mainMenu-navButtons #mainMenu-backBtn {
+        float: left;
+        margin-right: 4%;
+    }
+
+    .btn-block+.btn-block {
+        margin-top: auto;
+    }
 }

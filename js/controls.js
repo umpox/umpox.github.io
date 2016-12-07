@@ -1,82 +1,88 @@
 $(document).ready(function(){
     var box = document.getElementsByTagName('a-box');
     var y_cord, x_cord = 1;
-    var max_x = '5';
-    var max_y = '5';
-    var min_x = '1';
-    var min_y = '1';
+    var max_x = '5', max_y = '5';
+    var min_x = '1', min_y = '1';
     var aboveBox, belowBox, leftBox, rightBox;
     var cursor = document.getElementById('cursor');
+    var nearbyBlocks = {};
+    var currentBlockColor;
 
 
-    var changeColour = function() {
-        //DEMO CODE REPLACE SOON
-        this.setAttribute('color', '#88898c');
-        var oldBox = document.querySelectorAll('[y="' + ( parseInt(y_cord)) + '"][x="' + x_cord + '"]');
-        //DEMO CODE REPLACE SOON
-        if (this.getAttribute('active') === "true") {
-            oldBox[0].setAttribute('color', '#1c1c1f');
-        }
-        else {
-            oldBox[0].setAttribute('color', '#dfe0e6');
-        }
-        //DEMO CODE REPLACE SOON
-        aboveBox[0].innerHTML = '';
-        aboveBox[0].setAttribute('scale', '1');
-        belowBox[0].innerHTML = '';
-        belowBox[0].setAttribute('scale', '1');
-        leftBox[0].innerHTML = '';
-        leftBox[0].setAttribute('scale', '1');
-        //highlightBlocks(this);
+    var reCursor = function() {
+        //Hacky fix for A-Frames cursor problem
+        //Recreates the cursor to update click handlers
+        cursor.removeAttribute('raycaster');
+        cursor.setAttribute('raycaster', 'objects: .clickable');
     };
 
-   /* var returnColor = function() {
-        //this.setAttribute('color', '#4CC3D9');  
+    var moveBlock = function(currentBlock) {
+        //Get current block color used later to change the empty block color
+        currentBlockColor = this.getAttribute("color");
 
-        //RESET SURROUNDING BOX VALUES
-        aboveBox[0].setAttribute('depth', '0.05');
-        belowBox[0].setAttribute('depth', '0.05');
-        leftBox[0].setAttribute('depth', '0.05');
-        rightBox[0].setAttribute('depth', '0.05');
+        //Set the selected block to empty
+        this.setAttribute('color', '#88898c');
 
-        aboveBox, belowBox, leftBox, rightBox = null;
-    };*/
+        highlightBlocks(nearbyBlocks, false);
+        calculateNearbyBlocks(this);
 
-    var highlightBlocks =  function(emptyBox) {
-        y_cord = emptyBox.getAttribute('y');
-        x_cord = emptyBox.getAttribute('x');    
+        /*Set the selected block 'empty' to true,
+        keep this below calculateNearbyBlocks as the empty attribute
+        is used to locate the empty block*/
+        this.setAttribute('empty', 'true');
+    };
 
-        //Determine if there is a box alongside current box, if so change its colour
+    var calculateNearbyBlocks = function(currentBlock) {
+        y_cord = currentBlock.getAttribute('y');
+        x_cord = currentBlock.getAttribute('x');  
+
+        //Calculate the nearby blocks based on HTML coordinates
         if (y_cord !== max_y) {
-            aboveBox = document.querySelectorAll('[y="' + ( parseInt(y_cord)+1 ) + '"][x="' + x_cord + '"]');
-            aboveBox[0].classList.add('clickable');
-            aboveBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
+            nearbyBlocks.aboveBox = document.querySelectorAll('[y="' + ( parseInt(y_cord)+1 ) + '"][x="' + x_cord + '"]');
         }
         if (y_cord !== min_y) {
-            belowBox = document.querySelectorAll('[y="' + ( parseInt(y_cord) - 1 ) + '"][x="' + x_cord + '"]');
-            belowBox[0].classList.add('clickable');
-            belowBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
-        }
+            nearbyBlocks.belowBox = document.querySelectorAll('[y="' + ( parseInt(y_cord) - 1 ) + '"][x="' + x_cord + '"]');
+        }   
         if (x_cord !== min_x) {
-            leftBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) - 1 ) + '"]');
-            leftBox[0].classList.add('clickable');
-            leftBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
+            nearbyBlocks.leftBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) - 1 ) + '"]');
         }
         if (x_cord !== max_x) {
-            rightBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) + 1 ) + '"]');
-            rightBox[0].classList.add('clickable');
-            rightBox[0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate-reverse" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
+            nearbyBlocks.rightBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) + 1 ) + '"]');
         }
+
+        highlightBlocks(nearbyBlocks, true);                   
+     };
+
+    var highlightBlocks =  function(nearbyBlocks, status) {
+        //If status == true highlight blocks, if false unhighlight blocks   
+        for (var block in nearbyBlocks){
+            if (status === true) {
+                nearbyBlocks[block][0].classList.add('clickable');
+                nearbyBlocks[block][0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
+            }
+            else {
+                nearbyBlocks[block][0].classList.remove('clickable');
+                //Slow animation smoothly
+                nearbyBlocks[block][0].innerHTML = '<a-animation dur="50" attribute="scale" direction="normal" repeat="0" to="1 1 1"></a-animation>';               
+            }
+
+            //Change the colour of the empty block to the colour of the moved block
+            if ( nearbyBlocks[block][0].hasAttribute("empty") ) {
+                nearbyBlocks[block][0].setAttribute('color', currentBlockColor);
+                nearbyBlocks[block][0].removeAttribute("empty");
+            }
+        }  
+        reCursor();
     };
 
     //SET BLOCK STATES
     for (var i = 0; i < box.length; i++) {
         //Add mouse listeners
-        box[i].addEventListener('click', changeColour, false);        
+        box[i].addEventListener('click', moveBlock, false);        
 
         if ( box[i].getAttribute('empty') === "true" ) {
             box[i].setAttribute('color', '#88898c');
-            highlightBlocks(box[i]);
+            calculateNearbyBlocks(box[i]);
         }
         else if ( box[i].getAttribute('active') === "true" ) {
             box[i].setAttribute('color', '#1c1c1f');
@@ -85,7 +91,6 @@ $(document).ready(function(){
             box[i].setAttribute('color', '#dfe0e6');
         }
     }
-
-    cursor.setAttribute('raycaster', 'objects: .clickable');
-
 });
+
+
