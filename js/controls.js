@@ -5,6 +5,7 @@ $(document).ready(function(){
     var min_x = '1', min_y = '1';
     var aboveBox, belowBox, leftBox, rightBox;
     var cursor = document.getElementById('cursor');
+    cursor.setAttribute('raycaster', 'objects: .clickable');
     var nearbyBlocks = {};
     var currentBlockColor;
 
