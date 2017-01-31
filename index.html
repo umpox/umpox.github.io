@@ -18,7 +18,7 @@
                 <div class="col-xs-12 menuContainer">
 
                     <div id="mainLogo">
-                        <img src="resources/logo.png"></img>
+                        <img src="resources/logo2.png"></img>
                     </div>
 
                     <div id="mainMenu">
@@ -27,7 +27,10 @@
                         </button>
                         <button id="mainMenu-registerBtn" type="button" onclick="navigateRegister()" class="menuBtn btn btn-default btn-lg btn-block">
                             Register
-                        </button>                        
+                        </button>
+                        <button id="mainMenu-freePlayBtn" type="button" onclick="navigateFreePlay()" class="menuBtn btn btn-default btn-lg btn-block">
+                            Free Play
+                        </button>                         
                     </div>
 
                     <div id="mainMenu-loginMenu" style="display: none">
@@ -66,15 +69,42 @@
                         </div>                        
                     </div>  
                     
-                    <div id="controls" style="display: none" action="VRgame.html">
-                        <form action="VRgame.html">
-                            <button id="controls-VR" type="submit" class="menuBtn btn btn-primary btn-lg btn-block">
-                                VR
-                            </button>                            
-                        </form>
-                        <button id="controls-2D" type="submit" class="menuBtn btn btn-default btn-lg btn-block">
+                    <div id="controls" style="display: none">
+                        <button onclick="navigateModes()" id="controls-VR" type="button" class="menuBtn btn btn-primary btn-lg btn-block">
+                            VR
+                        </button>  
+
+                        <button onclick="navigateModes()" id="controls-2D" type="button" class="menuBtn btn btn-default btn-lg btn-block">
                             2D
-                        </button>                                              
+                        </button>
+
+                        <div id="mainMenu-navButtons">                              
+                            <button id="mainMenu-backBtn" type="button" onclick="navigateMenu()" class="menuBtn btn btn-default btn-lg btn-block">
+                                Back
+                            </button>                               
+                        </div>                                             
+                    </div>
+
+                    <div id="modes" style="display: none">
+                        <button onclick="navigateGrids()" id="mode-Normal" type="button" class="menuBtn btn btn-primary btn-lg btn-block">
+                            Normal
+                        </button>  
+
+                        <button onclick="loadGame(5, 5)" id="mode-Challenge" type="button" class="menuBtn btn btn-default btn-lg btn-block">
+                            Challenge
+                        </button> 
+                        
+                        <div id="mainMenu-navButtons">                              
+                            <button id="mainMenu-backBtn" type="button" onclick="navigateType()" class="menuBtn btn btn-default btn-lg btn-block">
+                                Back
+                            </button>                               
+                        </div>                                                
+                    </div>
+
+                    <div id="grids" style="display: none">
+                        <img onclick="loadGame(5, 5)" src="resources/grid5x5.png">
+                        <img onclick="loadGame(5, 7)" src="resources/grid5x7.png" >  
+                        <img onclick="loadGame(10, 10)" src="resources/grid10x10.png" >                                          
                     </div>
 
                 </div>               

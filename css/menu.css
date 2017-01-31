@@ -34,9 +34,17 @@
 }
 
 #mainLogo img {
-    width: 75%;
+    width: 25%;
+    max-width: 100px;
     display: block;
     margin: auto;
+    margin-bottom: 10px;
+}
+
+#grids img {
+    width: 50%;
+    display: block;
+    margin: 20px auto;
 }
 
 @media screen and (min-width: 768px) {

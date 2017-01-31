@@ -5,7 +5,6 @@ $(document).ready(function(){
     var min_x = '1', min_y = '1';
     var aboveBox, belowBox, leftBox, rightBox;
     var cursor = document.getElementById('cursor');
-    cursor.setAttribute('raycaster', 'objects: .clickable');
     var nearbyBlocks = {};
     var currentBlockColor;
 
@@ -16,6 +15,61 @@ $(document).ready(function(){
         cursor.removeAttribute('raycaster');
         cursor.setAttribute('raycaster', 'objects: .clickable');
     };
+
+    var generateRandomArray = function(length, totalBlocks) {
+        var arr = [];
+        while(arr.length < length){
+            var randomnumber = Math.ceil(Math.random()*totalBlocks);
+            if(arr.indexOf(randomnumber) > -1) continue;
+            arr[arr.length] = randomnumber;
+        }
+        return arr;
+    };
+
+    var generateBlocks = function(height, width) {
+        var totalBlocks = height * width;
+        var y = height;
+        var x = width;
+        var verticalDistance = -0.7;
+        var horizontalDistance = 2.4;
+        var emptyBlockNum = parseInt( Math.random() * totalBlocks );
+        var attributeEmpty = true;
+        var attributeActive = false;
+        var activeBlockNum = 11;
+
+        //Generate random array of 11 numbers to assign to the black boxes
+        var randomActiveBlocks = generateRandomArray(11, totalBlocks);
+
+        if (height === "5" && width === "7") {
+            //move left
+        }
+
+        for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {
+            
+            if($.inArray(blockCount, randomActiveBlocks) > -1) {
+                attributeActive = true;
+            }
+
+            $('#grid').append('<a-box active="' + attributeActive + '" empty="' + attributeEmpty + '" y="' + y + '" x="' + x + '" position="' + verticalDistance + ' ' + horizontalDistance  + ' -1.5" rotation="0" width="0.3" height="0.3" depth="0.05"></a-box>');
+            attributeEmpty = false;
+            attributeActive = false;
+
+            if (x === 1) {
+                x = width;
+                y = y-1;
+                horizontalDistance = parseFloat( (horizontalDistance - 0.4).toFixed(2) );
+                verticalDistance = -0.7;
+            }
+            else {
+                x = x-1;
+                verticalDistance = parseFloat( (verticalDistance + 0.35).toFixed(2) );
+            }
+
+        } 
+
+    };
+
+    generateBlocks(5, 5);
 
     var moveBlock = function(currentBlock) {
         //Get current block color used later to change the empty block color
@@ -68,7 +122,7 @@ $(document).ready(function(){
             }
 
             //Change the colour of the empty block to the colour of the moved block
-            if ( nearbyBlocks[block][0].hasAttribute("empty") ) {
+            if ( nearbyBlocks[block][0].getAttribute("empty") === "true" ) {
                 nearbyBlocks[block][0].setAttribute('color', currentBlockColor);
                 nearbyBlocks[block][0].removeAttribute("empty");
             }
