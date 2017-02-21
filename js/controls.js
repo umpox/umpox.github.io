@@ -1,6 +1,3 @@
-console.log(document.querySelector('a-assets').fileLoader);
-
-
 $(document).ready(function(){
     var box = document.getElementsByTagName('a-box');
     var y_cord, x_cord = 1;
