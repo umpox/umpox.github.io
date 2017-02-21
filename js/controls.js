@@ -91,6 +91,15 @@ $(document).ready(function(){
         this.setAttribute('empty', 'true');
     };
 
+    var generateLetterAssignment = function() {
+        var availableChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var char = availableChars.charAt(Math.floor(Math.random() * availableChars.length));
+        document.getElementById("currentLetter").src = "resources/completeLetters/" + char + ".png";
+    };
+
+     generateLetterAssignment();
+
+
     var calculateNearbyBlocks = function(currentBlock) {
         y_cord = currentBlock.getAttribute('y');
         x_cord = currentBlock.getAttribute('x');  
@@ -150,6 +159,6 @@ $(document).ready(function(){
             box[i].setAttribute('color', '#dfe0e6');
         }
     }
-});
 
+});
 
