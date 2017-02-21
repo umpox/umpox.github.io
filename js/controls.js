@@ -8,7 +8,6 @@ $(document).ready(function(){
     var nearbyBlocks = {};
     var currentBlockColor;
 
-
     var reCursor = function() {
         //Hacky fix for A-Frames cursor problem
         //Recreates the cursor to update click handlers
@@ -19,10 +18,14 @@ $(document).ready(function(){
     var generateRandomArray = function(length, totalBlocks) {
         var arr = [];
         while(arr.length < length){
-            var randomnumber = Math.ceil(Math.random()*totalBlocks);
+            var randomnumber = Math.floor(Math.random()*totalBlocks);
+            if (randomnumber === 0) {
+                randomnumber++;
+            }
             if(arr.indexOf(randomnumber) > -1) continue;
             arr[arr.length] = randomnumber;
         }
+        console.log(arr);
         return arr;
     };
 
@@ -45,7 +48,7 @@ $(document).ready(function(){
         }
 
         for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {
-            
+    
             if($.inArray(blockCount, randomActiveBlocks) > -1) {
                 attributeActive = true;
             }
@@ -69,6 +72,7 @@ $(document).ready(function(){
 
     };
 
+    //TEMP FUNCTION CALL TO GENERATE BLOCKS
     generateBlocks(5, 5);
 
     var moveBlock = function(currentBlock) {
