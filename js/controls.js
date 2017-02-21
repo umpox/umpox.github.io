@@ -1,5 +1,6 @@
 $(document).ready(function(){
     var box = document.getElementsByTagName('a-box');
+    var startTimer = document.getElementById('startTimer');
     var y_cord, x_cord = 1;
     var max_x = '5', max_y = '5';
     var min_x = '1', min_y = '1';
@@ -121,6 +122,15 @@ $(document).ready(function(){
         highlightBlocks(nearbyBlocks, true);                   
      };
 
+    var initTimer = function() {
+        console.log('hello');
+        AFRAME.registerComponent('timer', {
+            tick: function (time, timeDelta) {
+                console.log(time);
+            }
+        });
+    };
+
     var highlightBlocks =  function(nearbyBlocks, status) {
         //If status == true highlight blocks, if false unhighlight blocks   
         for (var block in nearbyBlocks){
@@ -159,6 +169,5 @@ $(document).ready(function(){
             box[i].setAttribute('color', '#dfe0e6');
         }
     }
-
 });
 
