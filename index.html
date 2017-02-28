@@ -1,5 +1,17 @@
 <html>
     <head>
+        <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+        <script>
+            // TYblocks Key
+            var config = {
+                apiKey: "AIzaSyA4dIiNSRhnrxbjAVEt-nA3mIS10XYiCAI",
+                authDomain: "tyblocks-71854.firebaseapp.com",
+                databaseURL: "https://tyblocks-71854.firebaseio.com",
+                storageBucket: "tyblocks-71854.appspot.com",
+                messagingSenderId: "510908265922"
+            };
+            firebase.initializeApp(config);
+        </script>
         <link 
             rel="stylesheet" 
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
@@ -35,10 +47,10 @@
 
                     <div id="mainMenu-loginMenu" style="display: none">
                         <div class="form-group row mainMenu-input">
-                            <input type="email" class="form-control" placeholder="Enter email"> 
+                            <input id="loginEmail" type="email" class="form-control" placeholder="Enter email"> 
                         </div>    
                         <div class="form-group row mainMenu-input">
-                            <input type="password" class="form-control" placeholder="Enter password">  
+                            <input id="loginPassword" type="password" class="form-control" placeholder="Enter password">  
                         </div>
 
                         <div id="mainMenu-navButtons">
@@ -48,25 +60,27 @@
                             <button id="mainMenu-backBtn" type="button" onclick="navigateMenu()" class="menuBtn btn btn-default btn-lg btn-block">
                                 Back
                             </button>                               
-                        </div>                       
+                        </div>  
+                        <span id="loginError"></span>                                        
                     </div>
 
                     <div id="mainMenu-registerMenu" style="display: none">
                         <div class="form-group row mainMenu-input">
-                            <input type="email" class="form-control" placeholder="Enter email"> 
+                            <input id="registerEmail" type="email" class="form-control" placeholder="Enter email"> 
                         </div>    
                         <div class="form-group row mainMenu-input">
-                            <input type="password" class="form-control" placeholder="Enter password">  
+                            <input id="registerPassword" type="password" class="form-control" placeholder="Enter password">  
                         </div>
 
                         <div id="mainMenu-navButtons">
-                            <button id="mainMenu-loginBtn" onsubmit="registerUser()" type="submit" class="menuBtn btn btn-primary btn-lg btn-block">
+                            <button id="mainMenu-loginBtn" onclick="registerUser()" type="submit" class="menuBtn btn btn-primary btn-lg btn-block">
                                 Register
                             </button>                               
                             <button id="mainMenu-backBtn" type="button" onclick="navigateMenu()" class="menuBtn btn btn-default btn-lg btn-block">
                                 Back
                             </button>                               
-                        </div>                        
+                        </div>     
+                        <span id="registerError"></span>                   
                     </div>  
                     
                     <div id="controls" style="display: none">
@@ -77,12 +91,7 @@
                         <button onclick="navigateModes()" id="controls-2D" type="button" class="menuBtn btn btn-default btn-lg btn-block">
                             2D
                         </button>
-
-                        <div id="mainMenu-navButtons">                              
-                            <button id="mainMenu-backBtn" type="button" onclick="navigateMenu()" class="menuBtn btn btn-default btn-lg btn-block">
-                                Back
-                            </button>                               
-                        </div>                                             
+                                        
                     </div>
 
                     <div id="modes" style="display: none">
@@ -95,7 +104,7 @@
                         </button> 
                         
                         <div id="mainMenu-navButtons">                              
-                            <button id="mainMenu-backBtn" type="button" onclick="navigateType()" class="menuBtn btn btn-default btn-lg btn-block">
+                            <button id="controls-backBtn" type="button" onclick="navigateType()" class="menuBtn btn btn-default btn-lg btn-block">
                                 Back
                             </button>                               
                         </div>                                                
@@ -107,6 +116,12 @@
                         <img onclick="loadGame(10, 10)" src="resources/grid10x10.png" >                                          
                     </div>
 
+                </div>
+
+                <div class="col-xs-12 signOutBtn">
+                    <button id="logoutBtn" type="button" onclick="signOut()" class="btn btn-default btn-lg btn-block">
+                        Logout
+                    </button>                      
                 </div>               
             </div>
         </div>

@@ -36,14 +36,41 @@ var navigateMenu = function() {
 var navigateType = function() {
     $("#modes").hide();
     $("#controls").show();
-}
+};
 
 var loginUser = function() {
-    $("#mainMenu-loginMenu").hide();
-    $("#controls").show();
+    var loginEmail = document.getElementById('loginEmail');
+    var loginPassword = document.getElementById('loginPassword');
+    var loginError = document.getElementById('loginError');
+
+   firebase.auth().signInWithEmailAndPassword(loginEmail.value, loginPassword.value).then(function() {
+        $("#mainMenu-loginMenu").hide();
+        $("#controls").show();
+    }).catch(function(error) {
+        loginError.innerHTML = error;
+    });
+};
+
+var registerUser = function() {
+    var registerEmail = document.getElementById('registerEmail');
+    var registerPassword = document.getElementById('registerPassword');
+    var registerError = document.getElementById('registerError');
+
+   firebase.auth().createUserWithEmailAndPassword(registerEmail.value, registerPassword.value).then(function() {
+        $("#mainMenu-loginMenu").hide();
+        $("#controls").show();
+    }).catch(function(error) {
+        registerError.innerHTML = error;
+    });
 };
 
 var loadGame = function(x, y) {
     var text = encodeURI('VRgame.html#gridY=' + y + '&gridX=' + x);
     window.location.href = text;
-}
+};
+
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}, function(error) {
+  // An error happened.
+});

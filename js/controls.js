@@ -9,6 +9,7 @@ $(document).ready(function(){
     var nearbyBlocks = {};
     var currentBlockColor;
 
+
     var reCursor = function() {
         //Hacky fix for A-Frames cursor problem
         //Recreates the cursor to update click handlers
