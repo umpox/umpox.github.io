@@ -2,6 +2,11 @@
     box-sizing: border-box;   
 }
 
+html {
+    /* DISABLE SCROLLING */
+    overflow-y: hidden!important;
+}
+
 #appBlock {
     height: 100vh;
     position: relative;
