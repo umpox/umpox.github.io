@@ -163,8 +163,8 @@ $(document).ready(function(){
 
     var submitCreatedLetter = function() {
         var submittedSequence = [];
-        var functionString = "algorithm" + char;
-        var letterFunction = window[functionString];
+        var functionString;
+        var letterFunction;
         var listOfBlocks = document.getElementsByClassName('tyBlock');
 
         for (countedBlocks = 0; countedBlocks < totalBlocks; countedBlocks++) {
@@ -176,7 +176,8 @@ $(document).ready(function(){
             }
         }
 
-        alert(submittedSequence);
+        functionString = "algorithm" + char;
+        letterFunction = window[functionString](submittedSequence);
 
         if (typeof letterFunction === "function") {
             letterFunction();
