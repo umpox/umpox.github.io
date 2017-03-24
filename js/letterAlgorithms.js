@@ -8,7 +8,7 @@ var algorithmA = function(submittedSequence) {
         1,0,0,0,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -24,7 +24,7 @@ var algorithmB = function(submittedSequence) {
         1,0,1,0,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -40,7 +40,7 @@ var algorithmC = function(submittedSequence) {
         0,1,1,1,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -56,7 +56,7 @@ var algorithmD = function(submittedSequence) {
         1,0,1,0,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -72,7 +72,7 @@ var algorithmE = function(submittedSequence) {
         0,1,1,1,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -99,7 +99,7 @@ var algorithmG = function(submittedSequence) {
         0,1,1,0,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -115,7 +115,7 @@ var algorithmH = function(submittedSequence) {
         1,0,0,0,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -131,7 +131,7 @@ var algorithmI = function(submittedSequence) {
         1,1,1,1,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -147,7 +147,7 @@ var algorithmJ = function(submittedSequence) {
         0,1,1,0,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -163,7 +163,7 @@ var algorithmK = function(submittedSequence) {
         1,0,0,0,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -179,7 +179,7 @@ var algorithmL = function(submittedSequence) {
         0,1,1,1,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -195,7 +195,7 @@ var algorithmM = function(submittedSequence) {
         1,0,0,0,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -211,7 +211,7 @@ var algorithmN = function(submittedSequence) {
         1,0,0,0,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -227,7 +227,7 @@ var algorithmO = function(submittedSequence) {
         0,1,1,1,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -243,7 +243,7 @@ var algorithmP = function(submittedSequence) {
         1,0,0,0,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -259,7 +259,7 @@ var algorithmQ = function(submittedSequence) {
         0,0,0,0,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -275,7 +275,7 @@ var algorithmR = function(submittedSequence) {
         1,0,0,0,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -291,7 +291,7 @@ var algorithmS = function(submittedSequence) {
         0,1,1,1,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -307,7 +307,7 @@ var algorithmT = function(submittedSequence) {
         0,0,1,0,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -323,7 +323,7 @@ var algorithmU = function(submittedSequence) {
         0,1,1,1,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -339,7 +339,7 @@ var algorithmV = function(submittedSequence) {
         0,0,1,0,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -355,7 +355,7 @@ var algorithmW = function(submittedSequence) {
         0,1,0,1,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -371,7 +371,7 @@ var algorithmX = function(submittedSequence) {
         1,0,0,0,1,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -387,7 +387,7 @@ var algorithmY = function(submittedSequence) {
         1,1,1,0,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
@@ -403,7 +403,7 @@ var algorithmZ = function(submittedSequence) {
         1,1,1,1,0,
     ];
 
-    if ( submittedSequence.join() === currentSequence.join() )
+    if ( submittedSequence.join() === correctSequence.join() )
     {
         alert('Correct!');
     }
