@@ -6,8 +6,12 @@ $(document).ready(function(){
     var min_x = '1', min_y = '1';
     var aboveBox, belowBox, leftBox, rightBox;
     var cursor = document.getElementById('cursor');
+    var submitBtn = document.getElementById('submitBtn');
     var nearbyBlocks = {};
     var currentBlockColor;
+    var currentBlockStatus;
+    var char;
+    var totalBlocks;
 
 
     var reCursor = function() {
@@ -32,7 +36,7 @@ $(document).ready(function(){
     };
 
     var generateBlocks = function(height, width) {
-        var totalBlocks = height * width;
+        totalBlocks = height * width;
         var y = height;
         var x = width;
         var verticalDistance = -0.7;
@@ -55,7 +59,7 @@ $(document).ready(function(){
                 attributeActive = true;
             }
 
-            $('#grid').append('<a-box active="' + attributeActive + '" empty="' + attributeEmpty + '" y="' + y + '" x="' + x + '" position="' + verticalDistance + ' ' + horizontalDistance  + ' -1.5" rotation="0" width="0.3" height="0.3" depth="0.05"></a-box>');
+            $('#grid').append('<a-box class="tyBlock" active="' + attributeActive + '" empty="' + attributeEmpty + '" y="' + y + '" x="' + x + '" position="' + verticalDistance + ' ' + horizontalDistance  + ' -1.5" rotation="0" width="0.3" height="0.3" depth="0.05"></a-box>');
             attributeEmpty = false;
             attributeActive = false;
 
@@ -80,6 +84,7 @@ $(document).ready(function(){
     var moveBlock = function(currentBlock) {
         //Get current block color used later to change the empty block color
         currentBlockColor = this.getAttribute("color");
+        currentBlockStatus = this.getAttribute("active");
 
         //Set the selected block to empty
         this.setAttribute('color', '#88898c');
@@ -91,11 +96,12 @@ $(document).ready(function(){
         keep this below calculateNearbyBlocks as the empty attribute
         is used to locate the empty block*/
         this.setAttribute('empty', 'true');
+        this.setAttribute('active', 'false');
     };
 
     var generateLetterAssignment = function() {
         var availableChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        var char = availableChars.charAt(Math.floor(Math.random() * availableChars.length));
+        char = availableChars.charAt(Math.floor(Math.random() * availableChars.length));
         document.getElementById("currentLetter").src = "resources/completeLetters/" + char + ".png";
     };
 
@@ -148,10 +154,33 @@ $(document).ready(function(){
             //Change the colour of the empty block to the colour of the moved block
             if ( nearbyBlocks[block][0].getAttribute("empty") === "true" ) {
                 nearbyBlocks[block][0].setAttribute('color', currentBlockColor);
+                nearbyBlocks[block][0].setAttribute('active', currentBlockStatus);
                 nearbyBlocks[block][0].removeAttribute("empty");
             }
         }  
         reCursor();
+    };
+
+    var submitCreatedLetter = function() {
+        var submittedSequence = [];
+        var functionString = "algorithm" + char;
+        var letterFunction = window[functionString];
+        var listOfBlocks = document.getElementsByClassName('tyBlock');
+
+        for (countedBlocks = 0; countedBlocks < totalBlocks; countedBlocks++) {
+            if (listOfBlocks[countedBlocks].getAttribute('active') === 'true') {
+                submittedSequence.push('1');
+            }
+            else if (listOfBlocks[countedBlocks].getAttribute('active') === 'false') {
+                submittedSequence.push('0');
+            }
+        }
+
+        alert(submittedSequence);
+
+        if (typeof letterFunction === "function") {
+            letterFunction();
+        }
     };
 
     //SET BLOCK STATES
@@ -170,5 +199,8 @@ $(document).ready(function(){
             box[i].setAttribute('color', '#dfe0e6');
         }
     }
+
+    submitBtn.addEventListener('click', submitCreatedLetter, false);
+
 });
 

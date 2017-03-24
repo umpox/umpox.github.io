@@ -6,6 +6,7 @@
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
         crossorigin="anonymous"></script>
     <script src="js/controls.js"></script>
+    <script src="js/letterAlgorithms.js"></script>
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -52,7 +53,7 @@
 
 
             <!-- VR BUTTONS -->
-            <a-box position="1.5 1.8 -1.5" rotation="0" width="0.85" height="0.4" depth="0.05"></a-box>
+            <a-box id="submitBtn" class="clickable" position="1.5 1.8 -1.5" rotation="0" width="0.85" height="0.4" depth="0.05"></a-box>
             <a-text value="Submit" color="#000" position="1.13 1.8 -1.475">></a-text>
 
             <a-box id="startTimer" position="1.5 1.3 -1.5" rotation="0" width="0.85" height="0.4" depth="0.05"></a-box>
