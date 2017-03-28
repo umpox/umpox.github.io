@@ -1,4 +1,6 @@
 "use strict";
+var user;
+
 var navigateLogin = function() {
     $("#mainMenu").hide();
     $("#mainMenu-loginMenu").show();
@@ -59,7 +61,7 @@ var loginUserGoogle = function() {
             // This gives you a Google Access Token.
             var token = result.credential.accessToken;
         }
-        var user = result.user;
+        user = result.user;
         $("#mainMenu-loginMenu").hide();
         $("#controls").show();
         $("#logoutBtn").show();
