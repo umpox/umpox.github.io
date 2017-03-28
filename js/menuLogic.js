@@ -13,6 +13,11 @@ firebase.auth().getRedirectResult().then(function(result) {
     $("#logoutBtn").show();
 });
 
+firebase.auth().onAuthStateChanged(function(user) {
+ window.user = user; // user is undefined if no user signed in
+ console.log('changed ' + user);
+});
+
 if (user != undefined) {
     console.log('hey');
 }
