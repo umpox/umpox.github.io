@@ -59,6 +59,7 @@ var registerUser = function() {
    firebase.auth().createUserWithEmailAndPassword(registerEmail.value, registerPassword.value).then(function() {
         $("#mainMenu-loginMenu").hide();
         $("#controls").show();
+        $("#logoutBtn").show();
     }).catch(function(error) {
         registerError.innerHTML = error;
     });
