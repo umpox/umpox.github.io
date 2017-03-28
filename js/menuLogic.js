@@ -7,6 +7,10 @@ firebase.auth().getRedirectResult().then(function(result) {
         var token = result.credential.accessToken;
     }
     user = result.user;
+
+    $("#mainMenu-loginMenu").hide();
+    $("#controls").show();
+    $("#logoutBtn").show();
 });
 
 if (user !== undefined) {
