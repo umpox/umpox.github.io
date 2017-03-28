@@ -46,6 +46,7 @@ var loginUser = function() {
    firebase.auth().signInWithEmailAndPassword(loginEmail.value, loginPassword.value).then(function() {
         $("#mainMenu-loginMenu").hide();
         $("#controls").show();
+        $("#logoutBtn").show();
     }).catch(function(error) {
         loginError.innerHTML = error;
     });
