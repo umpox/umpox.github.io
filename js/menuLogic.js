@@ -1,4 +1,5 @@
 "use strict";
+var user = undefined;
 // Using a redirect.
 firebase.auth().getRedirectResult().then(function(result) {
     if (result.credential) {
