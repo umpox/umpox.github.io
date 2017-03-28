@@ -8,19 +8,10 @@ firebase.auth().getRedirectResult().then(function(result) {
     }
     user = result.user;
 
-    $("#mainMenu-loginMenu").hide();
+    $("#mainMenu").hide();
     $("#controls").show();
     $("#logoutBtn").show();
 });
-
-firebase.auth().onAuthStateChanged(function(user) {
- window.user = user; // user is undefined if no user signed in
- console.log('changed ' + user);
-});
-
-if (user != undefined) {
-    console.log('hey');
-}
 
 var navigateLogin = function() {
     $("#mainMenu").hide();
