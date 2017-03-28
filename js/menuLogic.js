@@ -1,4 +1,19 @@
 "use strict";
+// Using a redirect.
+firebase.auth().getRedirectResult().then(function(result) {
+    if (result.credential) {
+        // This gives you a Google Access Token.
+        var token = result.credential.accessToken;
+    }
+    user = result.user;
+});
+
+if (user !== undefined) {
+    $("#mainMenu-loginMenu").hide();
+    $("#controls").show();
+    $("#logoutBtn").show();
+}
+
 var navigateLogin = function() {
     $("#mainMenu").hide();
     $("#mainMenu-loginMenu").show();
@@ -54,26 +69,7 @@ var loginUser = function() {
 
 var loginUserGoogle = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
-
     firebase.auth().signInWithRedirect(provider);
-
-    // Using a redirect.
-    /*firebase.auth().getRedirectResult().then(function(result) {
-        if (result.credential) {
-            // This gives you a Google Access Token.
-            var token = result.credential.accessToken;
-        }
-        user = result.user;
-        $("#mainMenu-loginMenu").hide();
-        $("#controls").show();
-        $("#logoutBtn").show();
-    });
-
-    // Start a sign in process for an unauthenticated user.
-    var provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('profile');
-    provider.addScope('email');
-    firebase.auth().signInWithRedirect(provider);*/
 };
 
 var registerUser = function() {
