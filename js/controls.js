@@ -111,11 +111,6 @@ $(document).ready(function(){
         y_cord = currentBlock.getAttribute('y');
         x_cord = currentBlock.getAttribute('x');  
 
-        nearbyBlocks.aboveBox = null;
-        nearbyBlocks.belowBox = null;
-        nearbyBlocks.leftBox = null;
-        nearbyBlocks.rightBox = null;
-
         //Calculate the nearby blocks based on HTML coordinates
         if (y_cord !== max_y) {
             nearbyBlocks.aboveBox = document.querySelectorAll('[y="' + ( parseInt(y_cord)+1 ) + '"][x="' + x_cord + '"]');
@@ -139,6 +134,7 @@ $(document).ready(function(){
             if (status === true) {
                 nearbyBlocks[block][0].classList.add('clickable');
                 nearbyBlocks[block][0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
+                console.log(nearbyBlocks[block][0]);
             }
             else {
                 nearbyBlocks[block][0].classList.remove('clickable');
