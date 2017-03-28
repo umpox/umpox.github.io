@@ -62,7 +62,7 @@
                             <input id="loginPassword" type="password" class="form-control" placeholder="Enter password">  
                         </div>
 
-                        <a>Forgot your username or password?</a>
+                        <a onclick="loadForgotCredential()">Forgot your username or password?</a>
 
                         <div id="mainMenu-navButtons">
                             <button id="mainMenu-loginBtn" type="submit" onclick="loginUser()" class="menuBtn btn btn-primary btn-lg btn-block">
@@ -96,10 +96,10 @@
                     
                     <div id="mainMenu-accountRecovery" style="display: none">                                                   <!-- added account recovery menu element-->
                         <div class="form-group row mainMenu-input">
-                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <input id="accountRecovery-email" type="email" class="form-control" placeholder="Enter your email">
                         </div>
                         <div id="mainMenu-navButtons">
-                            <button id="mainMenu-resetLink" onsubmit="" type="submit" class="menuBtn btn btn-primary btn-lg btn-block">
+                            <button id="mainMenu-resetLink" onsubmit="attemptAccountRecovery()" type="submit" class="menuBtn btn btn-primary btn-lg btn-block">
                                 Send
                             </button>                               
                             <button id="mainMenu-backBtn" type="button" onclick="navigateMenu()" class="menuBtn btn btn-default btn-lg btn-block">

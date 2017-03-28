@@ -44,12 +44,22 @@ var navigateMenu = function() {
     $("#mainMenu-registerMenu").hide();
     $("#mainMenu-loginMenu").hide();  
     $("#controls").hide();  
-
+    $("#mainMenu-accountRecovery").hide();
 };
 
 var navigateType = function() {
     $("#modes").hide();
     $("#controls").show();
+};
+
+var loadForgotCredential = function() {
+    $("#mainMenu-loginMenu").hide();
+    $("#mainMenu-accountRecovery").show();
+};
+
+var attemptAccountRecovery = function() {
+    var emailInput = $("accountRecovery-email").val();
+    firebase.auth().sendPasswordResetEmail(emailInput);
 };
 
 var loginUser = function() {
