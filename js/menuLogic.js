@@ -7,17 +7,15 @@ firebase.auth().getRedirectResult().then(function(result) {
         var token = result.credential.accessToken;
     }
     user = result.user;
+
+    $("#mainMenu").hide();
+    $("#controls").show();
+    $("#logoutBtn").show();
 });
 
 var navigateLogin = function() {
-    if (user === undefined) {
-        $("#mainMenu").hide();
-        $("#mainMenu-loginMenu").show();
-    } else {
-        $("#mainMenu").hide();
-        $("#controls").show();
-        $("#logoutBtn").show();
-    }
+    $("#mainMenu").hide();
+    $("#mainMenu-loginMenu").show();
 };
 
 var navigateRegister = function() {
@@ -93,8 +91,6 @@ var loadGame = function(x, y) {
 };
 
 var signOut = function() {
-    user = undefined;
-    
     firebase.auth().signOut().then(function() {
         location.reload();
     }, function(error) {
