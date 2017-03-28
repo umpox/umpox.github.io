@@ -93,6 +93,8 @@ var loadGame = function(x, y) {
 };
 
 var signOut = function() {
+    user = undefined;
+    
     firebase.auth().signOut().then(function() {
         location.reload();
     }, function(error) {
