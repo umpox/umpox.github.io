@@ -69,8 +69,10 @@ var loadGame = function(x, y) {
     window.location.href = text;
 };
 
-firebase.auth().signOut().then(function() {
-  // Sign-out successful.
-}, function(error) {
-  // An error happened.
-});
+var signOut = function() {
+    firebase.auth().signOut().then(function() {
+        location.reload();
+    }, function(error) {
+
+    });
+};
