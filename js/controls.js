@@ -111,6 +111,11 @@ $(document).ready(function(){
         y_cord = currentBlock.getAttribute('y');
         x_cord = currentBlock.getAttribute('x');  
 
+        nearbyBlocks.aboveBox = null;
+        nearbyBlocks.belowBox = null;
+        nearbyBlocks.leftBox = null;
+        nearbyBlocks.rightBox = null;
+
         //Calculate the nearby blocks based on HTML coordinates
         if (y_cord !== max_y) {
             nearbyBlocks.aboveBox = document.querySelectorAll('[y="' + ( parseInt(y_cord)+1 ) + '"][x="' + x_cord + '"]');
