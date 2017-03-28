@@ -58,11 +58,11 @@ var loginUserGoogle = function() {
         if (result.credential) {
             // This gives you a Google Access Token.
             var token = result.credential.accessToken;
-            $("#mainMenu-loginMenu").hide();
-            $("#controls").show();
-            $("#logoutBtn").show();
         }
         var user = result.user;
+        $("#mainMenu-loginMenu").hide();
+        $("#controls").show();
+        $("#logoutBtn").show();
     });
 
     // Start a sign in process for an unauthenticated user.
