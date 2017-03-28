@@ -15,7 +15,8 @@ var navigateLogin = function() {
         $("#mainMenu-loginMenu").show();
     } else {
         $("#mainMenu").hide();
-        $("#mainMenu-loginMenu").show();
+        $("#controls").show();
+        $("#logoutBtn").show();
     }
 };
 
