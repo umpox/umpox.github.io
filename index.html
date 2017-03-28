@@ -47,12 +47,22 @@
                     </div>
 
                     <div id="mainMenu-loginMenu" style="display: none">
+
+                        <div id="googleButton">                                                                     <!---added google btn-->
+                            <img src="resources/btn_google.png"></img>   
+                            <div id="divider"> 
+                                <strong class="divider-title">OR</strong>
+                            </div> 
+                        </div>
+
                         <div class="form-group row mainMenu-input">
                             <input id="loginEmail" type="email" class="form-control" placeholder="Enter email"> 
                         </div>    
                         <div class="form-group row mainMenu-input">
                             <input id="loginPassword" type="password" class="form-control" placeholder="Enter password">  
                         </div>
+
+                        <a>Forgot your username or password?</a>
 
                         <div id="mainMenu-navButtons">
                             <button id="mainMenu-loginBtn" type="submit" onclick="loginUser()" class="menuBtn btn btn-primary btn-lg btn-block">
@@ -84,6 +94,20 @@
                         <span id="registerError"></span>                   
                     </div>  
                     
+                    <div id="mainMenu-accountRecovery" style="display: none">                                                   <!-- added account recovery menu element-->
+                        <div class="form-group row mainMenu-input">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div id="mainMenu-navButtons">
+                            <button id="mainMenu-resetLink" onsubmit="" type="submit" class="menuBtn btn btn-primary btn-lg btn-block">
+                                Send
+                            </button>                               
+                            <button id="mainMenu-backBtn" type="button" onclick="navigateMenu()" class="menuBtn btn btn-default btn-lg btn-block">
+                                Back
+                            </button>                               
+                        </div>                        
+                    </div>
+
                     <div id="controls" style="display: none">
                         <button onclick="navigateModes()" id="controls-VR" type="button" class="menuBtn btn btn-primary btn-lg btn-block">
                             VR

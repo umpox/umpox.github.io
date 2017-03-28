@@ -69,6 +69,29 @@ html {
     color: red;
 }
 
+#divider {
+    border-top:2px solid #d9dadc;                /* Added divider and divider text */  
+    display: block;
+    line-height: 1px;
+    margin: 15px 0;
+    position: relative;
+    text-align: center;
+}
+
+#divider .divider-title {
+    background-color: #fff;                      /* this style is not implemented not clearing the divider line*/
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+
+#googleButton img {
+    display: block;                             /* added google auth image this isnt responsive  */
+    margin: auto;
+    padding: 5px;
+}
+
 @media screen and (min-width: 768px) {
     #mainLogo img {
         width: 50%;
