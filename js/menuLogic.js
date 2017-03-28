@@ -58,7 +58,7 @@ var loadForgotCredential = function() {
 };
 
 var attemptAccountRecovery = function() {
-    var emailInput = $("accountRecovery-email").val();
+    var emailInput = $("#accountRecovery-email").val();
     console.log(emailInput);
     firebase.auth().sendPasswordResetEmail(emailInput);
 };
