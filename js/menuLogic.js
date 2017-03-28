@@ -56,9 +56,9 @@ var loginUserGoogle = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
 
     firebase.auth().signInWithRedirect(provider);
-    
+
     // Using a redirect.
-    firebase.auth().getRedirectResult().then(function(result) {
+    /*firebase.auth().getRedirectResult().then(function(result) {
         if (result.credential) {
             // This gives you a Google Access Token.
             var token = result.credential.accessToken;
@@ -73,7 +73,7 @@ var loginUserGoogle = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('profile');
     provider.addScope('email');
-    firebase.auth().signInWithRedirect(provider);
+    firebase.auth().signInWithRedirect(provider);*/
 };
 
 var registerUser = function() {
