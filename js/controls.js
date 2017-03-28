@@ -119,22 +119,23 @@ $(document).ready(function(){
             nearbyBlocks.belowBox = document.querySelectorAll('[y="' + ( parseInt(y_cord) - 1 ) + '"][x="' + x_cord + '"]');
         }   
         if (x_cord !== min_x) {
-            nearbyBlocks.leftBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) - 1 ) + '"]');
+            nearbyBlocks.rightBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) - 1 ) + '"]');
         }
         if (x_cord !== max_x) {
-            nearbyBlocks.rightBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) + 1 ) + '"]');
+            nearbyBlocks.leftBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) + 1 ) + '"]');
         }
 
         highlightBlocks(nearbyBlocks, true);                   
      };
 
     var highlightBlocks =  function(nearbyBlocks, status) {
+                   console.dir(nearbyBlocks);
         //If status == true highlight blocks, if false unhighlight blocks   
         for (var block in nearbyBlocks){
+
             if (status === true) {
                 nearbyBlocks[block][0].classList.add('clickable');
                 nearbyBlocks[block][0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
-                console.log(nearbyBlocks[block][0]);
             }
             else {
                 nearbyBlocks[block][0].classList.remove('clickable');
