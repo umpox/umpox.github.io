@@ -90,6 +90,7 @@ html {
     display: block;                             /* added google auth image this isnt responsive  */
     margin: auto;
     padding: 5px;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
