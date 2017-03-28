@@ -13,10 +13,8 @@ firebase.auth().getRedirectResult().then(function(result) {
     $("#logoutBtn").show();
 });
 
-if (user !== undefined) {
-    $("#mainMenu-loginMenu").hide();
-    $("#controls").show();
-    $("#logoutBtn").show();
+if (user != undefined) {
+    console.log('hey');
 }
 
 var navigateLogin = function() {
