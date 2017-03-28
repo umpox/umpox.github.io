@@ -1,6 +1,4 @@
 "use strict";
-var user;
-
 var navigateLogin = function() {
     $("#mainMenu").hide();
     $("#mainMenu-loginMenu").show();
@@ -55,6 +53,10 @@ var loginUser = function() {
 };
 
 var loginUserGoogle = function() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    firebase.auth().signInWithRedirect(provider);
+    
     // Using a redirect.
     firebase.auth().getRedirectResult().then(function(result) {
         if (result.credential) {
