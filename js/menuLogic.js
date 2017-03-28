@@ -7,15 +7,16 @@ firebase.auth().getRedirectResult().then(function(result) {
         var token = result.credential.accessToken;
     }
     user = result.user;
-
-    $("#mainMenu").hide();
-    $("#controls").show();
-    $("#logoutBtn").show();
 });
 
 var navigateLogin = function() {
-    $("#mainMenu").hide();
-    $("#mainMenu-loginMenu").show();
+    if (user === undefined) {
+        $("#mainMenu").hide();
+        $("#mainMenu-loginMenu").show();
+    } else {
+        $("#mainMenu").hide();
+        $("#mainMenu-loginMenu").show();
+    }
 };
 
 var navigateRegister = function() {
