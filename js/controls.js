@@ -7,6 +7,8 @@ $(document).ready(function(){
     var cursor = document.getElementById('cursor');
     var submitBtn = document.getElementById('submitBtn');
     var submitTxt = document.getElementById('submitTxt');
+    var saveBtn = document.getElementById('saveBtn');
+    var saveTxt = document.getElementById('saveTxt');
     var letterImage = document.getElementById('letter');
     var leaderboardSpace = document.getElementById('leaderboard');
     var nearbyBlocks = {};
@@ -14,6 +16,9 @@ $(document).ready(function(){
     var currentBlockStatus;
     var char;
     var totalBlocks;
+    var gridY = 5;
+    var gridX = 5;
+    var mode = 'normal';
 
     var getQueryVariable = function(variable) {
         var query = window.location.search.substring(1);
@@ -25,8 +30,9 @@ $(document).ready(function(){
         return(false);
     };
 
-    var gridY = Number(getQueryVariable('gridY'));
-    var gridX = Number(getQueryVariable('gridX'));
+    gridY = Number(getQueryVariable('gridY'));
+    gridX = Number(getQueryVariable('gridX'));
+    mode = getQueryVariable('mode');
 
     var reCursor = function() {
         //Hacky fix for A-Frames cursor problem
@@ -67,15 +73,20 @@ $(document).ready(function(){
         //Generate random array of 11 numbers to assign to the black boxes
         var randomActiveBlocks = generateRandomArray(11, totalBlocks);
 
+        if (mode === 'normal') {
+            letterImage.setAttribute('visible', false);
+            leaderboardSpace.setAttribute('visible', false);
+            submitBtn.setAttribute('visible', false);
+            submitTxt.setAttribute('visible', false);
+            saveBtn.setAttribute('visible', true);
+            saveTxt.setAttribute('visible', true);
+        }
+
         if (height === 5 && width === 7) {
             max_x = '7';
             max_y = '5';
             originalVerticalDistance = -1.05;
             verticalDistance = originalVerticalDistance;
-            letterImage.setAttribute('visible', false);
-            leaderboardSpace.setAttribute('visible', false);
-            submitBtn.setAttribute('visible', false);
-            submitTxt.setAttribute('visible', false);
         }
         else if (height === 10 && width === 10) {
             max_x = '10';
@@ -84,10 +95,6 @@ $(document).ready(function(){
             verticalDistance = originalVerticalDistance;
             originalHorizontalDistance = 3.4;
             horizontalDistance = originalHorizontalDistance;
-            letterImage.setAttribute('visible', false);
-            leaderboardSpace.setAttribute('visible', false);
-            submitBtn.setAttribute('visible', false);
-            submitTxt.setAttribute('visible', false);
         }
 
         for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {

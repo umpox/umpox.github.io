@@ -98,8 +98,8 @@ var registerUser = function() {
     });
 };
 
-var loadGame = function(x, y) {
-    var text = encodeURI('VRgame.html?gridY=' + y + '&gridX=' + x);
+var loadGame = function(x, y, mode) {
+    var text = encodeURI('VRgame.html?gridY=' + y + '&gridX=' + x + '&mode=' + mode);
     window.location.href = text;
 };
 
