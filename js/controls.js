@@ -6,12 +6,27 @@ $(document).ready(function(){
     var aboveBox, belowBox, leftBox, rightBox;
     var cursor = document.getElementById('cursor');
     var submitBtn = document.getElementById('submitBtn');
+    var submitTxt = document.getElementById('submitTxt');
+    var letterImage = document.getElementById('letter');
+    var leaderboardSpace = document.getElementById('leaderboard');
     var nearbyBlocks = {};
     var currentBlockColor;
     var currentBlockStatus;
     var char;
     var totalBlocks;
 
+    var getQueryVariable = function(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    };
+
+    var gridY = Number(getQueryVariable('gridY'));
+    var gridX = Number(getQueryVariable('gridX'));
 
     var reCursor = function() {
         //Hacky fix for A-Frames cursor problem
@@ -30,7 +45,6 @@ $(document).ready(function(){
             if(arr.indexOf(randomnumber) > -1) continue;
             arr[arr.length] = randomnumber;
         }
-        console.log(arr);
         return arr;
     };
 
@@ -38,8 +52,13 @@ $(document).ready(function(){
         totalBlocks = height * width;
         var y = height;
         var x = width;
+
         var verticalDistance = -0.7;
+        var originalVerticalDistance = -0.7;
+
         var horizontalDistance = 2.4;
+        var originalHorizontalDistance = 2.4;
+
         var emptyBlockNum = parseInt( Math.random() * totalBlocks );
         var attributeEmpty = true;
         var attributeActive = false;
@@ -48,25 +67,44 @@ $(document).ready(function(){
         //Generate random array of 11 numbers to assign to the black boxes
         var randomActiveBlocks = generateRandomArray(11, totalBlocks);
 
-        if (height === "5" && width === "7") {
-            //move left
+        if (height === 5 && width === 7) {
+            max_x = '7';
+            max_y = '5';
+            originalVerticalDistance = -1.05;
+            verticalDistance = originalVerticalDistance;
+            letterImage.setAttribute('visible', false);
+            leaderboardSpace.setAttribute('visible', false);
+            submitBtn.setAttribute('visible', false);
+            submitTxt.setAttribute('visible', false);
+        }
+        else if (height === 10 && width === 10) {
+            max_x = '10';
+            max_y = '10';
+            originalVerticalDistance = -1.57;
+            verticalDistance = originalVerticalDistance;
+            originalHorizontalDistance = 3.4;
+            horizontalDistance = originalHorizontalDistance;
+            letterImage.setAttribute('visible', false);
+            leaderboardSpace.setAttribute('visible', false);
+            submitBtn.setAttribute('visible', false);
+            submitTxt.setAttribute('visible', false);
         }
 
         for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {
-    
+
             if($.inArray(blockCount, randomActiveBlocks) > -1) {
                 attributeActive = true;
             }
 
             $('#grid').append('<a-box class="tyBlock" active="' + attributeActive + '" empty="' + attributeEmpty + '" y="' + y + '" x="' + x + '" position="' + verticalDistance + ' ' + horizontalDistance  + ' -1.5" rotation="0" width="0.3" height="0.3" depth="0.05"></a-box>');
             attributeEmpty = false;
-            attributeActive = false;
+            attributeActive = false;   
 
             if (x === 1) {
                 x = width;
                 y = y-1;
                 horizontalDistance = parseFloat( (horizontalDistance - 0.4).toFixed(2) );
-                verticalDistance = -0.7;
+                verticalDistance = originalVerticalDistance;
             }
             else {
                 x = x-1;
@@ -77,8 +115,7 @@ $(document).ready(function(){
 
     };
 
-    //TEMP FUNCTION CALL TO GENERATE BLOCKS
-    generateBlocks(5, 5);
+    generateBlocks(gridY, gridX);
 
     var moveBlock = function(currentBlock) {
         //Get current block color used later to change the empty block color
@@ -129,7 +166,6 @@ $(document).ready(function(){
      };
 
     var highlightBlocks =  function(nearbyBlocks, status) {
-                   console.dir(nearbyBlocks);
         //If status == true highlight blocks, if false unhighlight blocks   
         for (var block in nearbyBlocks){
 
@@ -178,6 +214,7 @@ $(document).ready(function(){
 
     //SET BLOCK STATES
     for (var i = 0; i < box.length; i++) {
+
         //Add mouse listeners
         box[i].addEventListener('click', moveBlock, false);        
 
@@ -191,6 +228,7 @@ $(document).ready(function(){
         else {
             box[i].setAttribute('color', '#dfe0e6');
         }
+        
     }
 
     submitBtn.addEventListener('click', submitCreatedLetter, false);
