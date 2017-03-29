@@ -64,9 +64,18 @@ html {
     margin: 20px auto;
 }
 
+#grids #gridsTitle {
+    text-align: center;
+}
+
 #loginError, #registerError {
     width: 100%;
     color: red;
+}
+
+#registerSuccess {
+    width: 100%;
+    color: green;
 }
 
 #divider {

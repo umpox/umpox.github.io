@@ -9,7 +9,7 @@ firebase.auth().getRedirectResult().then(function(result) {
     user = result.user;
 
     $("#mainMenu").hide();
-    $("#controls").show();
+    $("#modes").show();
     $("#logoutBtn").show();
 });
 
@@ -36,6 +36,7 @@ var navigateModes = function() {
 var navigateGrids = function() {
     $("#modes").hide();
     $("#mainLogo").hide();
+    $("#mainMenu").hide(); 
     $("#grids").show();
 };
 
@@ -43,7 +44,6 @@ var navigateMenu = function() {
     $("#mainMenu").show();
     $("#mainMenu-registerMenu").hide();
     $("#mainMenu-loginMenu").hide();  
-    $("#controls").hide();  
     $("#mainMenu-accountRecovery").hide();
 };
 
@@ -69,7 +69,7 @@ var loginUser = function() {
 
    firebase.auth().signInWithEmailAndPassword(loginEmail.value, loginPassword.value).then(function() {
         $("#mainMenu-loginMenu").hide();
-        $("#controls").show();
+        $("#modes").show();
         $("#logoutBtn").show();
     }).catch(function(error) {
         loginError.innerHTML = error;
@@ -85,12 +85,15 @@ var registerUser = function() {
     var registerEmail = document.getElementById('registerEmail');
     var registerPassword = document.getElementById('registerPassword');
     var registerError = document.getElementById('registerError');
+    var registerSuccess = document.getElementById('registerSuccess');
 
    firebase.auth().createUserWithEmailAndPassword(registerEmail.value, registerPassword.value).then(function() {
-        $("#mainMenu-loginMenu").hide();
-        $("#controls").show();
-        $("#logoutBtn").show();
+        $("#registerError").hide();
+        $("#registerSuccess").show();
+        registerSuccess.innerHTML = 'You have successfully created a new account. Please attempt to login.';
     }).catch(function(error) {
+        $("#registerSuccess").hide();
+        $("#registerError").show();
         registerError.innerHTML = error;
     });
 };
