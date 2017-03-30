@@ -10,15 +10,15 @@ var algorithmA = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        ('#successArea').attr('visible', 'true');
-        ('#successTitle').attr('visible', 'true');
-        ('#successText').attr('visible', 'true');
-        ('#playAgainBtn').attr('visible', 'true');
-        ('#playAgainTxt').attr('visible', 'true');
-        ('#socialBtn').attr('visible', 'true');
-        ('#socialBtnTxt').attr('visible', 'true');
-        ('#exitBtn').attr('visible', 'true');
-        ('#exitBtnText').attr('visible', 'true');
+        $('#successArea').attr('visible', 'true');
+        $('#successTitle').attr('visible', 'true');
+        $('#successText').attr('visible', 'true');
+        $('#playAgainBtn').attr('visible', 'true');
+        $('#playAgainTxt').attr('visible', 'true');
+        $('#socialBtn').attr('visible', 'true');
+        $('#socialBtnTxt').attr('visible', 'true');
+        $('#exitBtn').attr('visible', 'true');
+        $('#exitBtnText').attr('visible', 'true');
     }
 };
 
