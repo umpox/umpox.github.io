@@ -10,7 +10,7 @@ var algorithmA = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        $('#successArea').attr('visible', 'true');
+        $('#success').attr('visible', 'true');
         $('#successTitle').attr('visible', 'true');
         $('#successText').attr('visible', 'true');
         $('#playAgainBtn').attr('visible', 'true');
