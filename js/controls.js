@@ -11,6 +11,7 @@ $(document).ready(function(){
     var saveTxt = document.getElementById('saveTxt');
     var letterImage = document.getElementById('letter');
     var leaderboardSpace = document.getElementById('leaderboard');
+    var successArea = document.getElementById('success');
     var nearbyBlocks = {};
     var currentBlockColor;
     var currentBlockStatus;
@@ -234,13 +235,15 @@ $(document).ready(function(){
         else if ( box[i].getAttribute('active') === "true" ) {
             box[i].setAttribute('color', '#1c1c1f');
         }
-        else {
+        else if (box[i].className === 'tyBlock'){
             box[i].setAttribute('color', '#dfe0e6');
         }
         
     }
 
     submitBtn.addEventListener('click', submitCreatedLetter, false);
+
+    //Set final colours of certain elements
 
 });
 
