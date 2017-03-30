@@ -10,15 +10,7 @@ var algorithmA = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        $('#success').attr('visible', 'true');
-        $('#successTitle').attr('visible', 'true');
-        $('#successText').attr('visible', 'true');
-        $('#playAgainBtn').attr('visible', 'true');
-        $('#playAgainTxt').attr('visible', 'true');
-        $('#socialBtn').attr('visible', 'true');
-        $('#socialBtnTxt').attr('visible', 'true');
-        $('#exitBtn').attr('visible', 'true');
-        $('#exitBtnText').attr('visible', 'true');
+        showSuccessArea();
     }
 };
 
@@ -34,7 +26,7 @@ var algorithmB = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -50,7 +42,7 @@ var algorithmC = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -66,7 +58,7 @@ var algorithmD = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -82,7 +74,7 @@ var algorithmE = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -98,7 +90,7 @@ var algorithmF = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -114,7 +106,7 @@ var algorithmG = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -130,7 +122,7 @@ var algorithmH = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -146,7 +138,7 @@ var algorithmI = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -162,7 +154,7 @@ var algorithmJ = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -178,7 +170,7 @@ var algorithmK = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -194,7 +186,7 @@ var algorithmL = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -210,7 +202,7 @@ var algorithmM = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -226,7 +218,7 @@ var algorithmN = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -242,7 +234,7 @@ var algorithmO = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -258,7 +250,7 @@ var algorithmP = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -274,7 +266,7 @@ var algorithmQ = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -290,7 +282,7 @@ var algorithmR = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -306,7 +298,7 @@ var algorithmS = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -322,7 +314,7 @@ var algorithmT = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -338,7 +330,7 @@ var algorithmU = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -354,7 +346,7 @@ var algorithmV = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -370,7 +362,7 @@ var algorithmW = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -386,7 +378,7 @@ var algorithmX = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -402,7 +394,7 @@ var algorithmY = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
@@ -418,7 +410,18 @@ var algorithmZ = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-
+        showSuccessArea();
     }
 };
 
+var showSuccessArea = function() {
+    $('#success').attr('visible', 'true');
+    $('#successTitle').attr('visible', 'true');
+    $('#successText').attr('visible', 'true');
+    $('#playAgainBtn').attr('visible', 'true');
+    $('#playAgainTxt').attr('visible', 'true');
+    $('#socialBtn').attr('visible', 'true');
+    $('#socialBtnTxt').attr('visible', 'true');
+    $('#exitBtn').attr('visible', 'true');
+    $('#exitBtnText').attr('visible', 'true');
+};
