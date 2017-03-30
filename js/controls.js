@@ -19,6 +19,8 @@ $(document).ready(function(){
     var gridY = 5;
     var gridX = 5;
     var mode = 'normal';
+    // Get a reference to the database service
+    var database = firebase.database();
 
     var getQueryVariable = function(variable) {
         var query = window.location.search.substring(1);
