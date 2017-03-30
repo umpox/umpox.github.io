@@ -45,6 +45,8 @@ var navigateMenu = function() {
     $("#mainMenu-registerMenu").hide();
     $("#mainMenu-loginMenu").hide();  
     $("#mainMenu-accountRecovery").hide();
+    $("#modes").hide();
+    $("#logoutBtn").hide();
 };
 
 var navigateType = function() {
