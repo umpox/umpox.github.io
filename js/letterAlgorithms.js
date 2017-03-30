@@ -1,3 +1,13 @@
+var successArea = document.getElementById('success');
+var successTitle = document.getElementById('successTitle');
+var successText = document.getElementById('successText');
+var playAgainBtn = document.getElementById('playAgainBtn');
+var playAgainTxt = document.getElementById('playAgainTxt');
+var socialBtn = document.getElementById('socialBtn');
+var socialBtnTxt = document.getElementById('socialBtnTxt');
+var exitBtn = document.getElementById('exitBtn');
+var exitBtnText = document.getElementById('exitBtnText');
+
 var algorithmA = function(submittedSequence) {
     var correctSequence = 
     [
@@ -10,7 +20,15 @@ var algorithmA = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -26,7 +44,15 @@ var algorithmB = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -42,7 +68,15 @@ var algorithmC = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -58,7 +92,15 @@ var algorithmD = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -74,7 +116,15 @@ var algorithmE = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -87,6 +137,19 @@ var algorithmF = function(submittedSequence) {
         1,0,0,0,0,
         1,0,0,0,0,
     ];
+
+    if ( submittedSequence.join() === correctSequence.join() )
+    {
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
+    }
 };
 
 var algorithmG = function(submittedSequence) {
@@ -101,7 +164,15 @@ var algorithmG = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -117,7 +188,15 @@ var algorithmH = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -133,7 +212,15 @@ var algorithmI = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -149,7 +236,15 @@ var algorithmJ = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -165,7 +260,15 @@ var algorithmK = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -181,7 +284,15 @@ var algorithmL = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -197,7 +308,15 @@ var algorithmM = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -213,7 +332,15 @@ var algorithmN = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -229,7 +356,15 @@ var algorithmO = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -245,7 +380,15 @@ var algorithmP = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -261,7 +404,15 @@ var algorithmQ = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -277,7 +428,15 @@ var algorithmR = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -293,7 +452,15 @@ var algorithmS = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -309,7 +476,15 @@ var algorithmT = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -325,7 +500,15 @@ var algorithmU = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -341,7 +524,15 @@ var algorithmV = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -357,7 +548,15 @@ var algorithmW = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -373,7 +572,15 @@ var algorithmX = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -389,7 +596,15 @@ var algorithmY = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
 
@@ -405,6 +620,14 @@ var algorithmZ = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        alert('Correct!');
+        successArea.setAttribute('visible', true);
+        successTitle.setAttribute('visible', true);
+        successText.setAttribute('visible', true);
+        playAgainBtn.setAttribute('visible', true);
+        playAgainTxt.setAttribute('visible', true);
+        socialBtn.setAttribute('visible', true);
+        socialBtnTxt.setAttribute('visible', true);
+        exitBtn.setAttribute('visible', true);
+        exitBtnText.setAttribute('visible', true);
     }
 };
