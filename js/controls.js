@@ -244,6 +244,5 @@ $(document).ready(function(){
     submitBtn.addEventListener('click', submitCreatedLetter, false);
 
     //Set final colours of certain elements
-
 });
 

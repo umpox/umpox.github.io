@@ -20,15 +20,15 @@ var algorithmA = function(submittedSequence) {
 
     if ( submittedSequence.join() === correctSequence.join() )
     {
-        successArea.setAttribute('visible', true);
-        successTitle.setAttribute('visible', true);
-        successText.setAttribute('visible', true);
-        playAgainBtn.setAttribute('visible', true);
-        playAgainTxt.setAttribute('visible', true);
-        socialBtn.setAttribute('visible', true);
-        socialBtnTxt.setAttribute('visible', true);
-        exitBtn.setAttribute('visible', true);
-        exitBtnText.setAttribute('visible', true);
+        ('#successArea').attr('visible', 'true');
+        ('#successTitle').attr('visible', 'true');
+        ('#successText').attr('visible', 'true');
+        ('#playAgainBtn').attr('visible', 'true');
+        ('#playAgainTxt').attr('visible', 'true');
+        ('#socialBtn').attr('visible', 'true');
+        ('#socialBtnTxt').attr('visible', 'true');
+        ('#exitBtn').attr('visible', 'true');
+        ('#exitBtnText').attr('visible', 'true');
     }
 };
 
@@ -631,3 +631,4 @@ var algorithmZ = function(submittedSequence) {
         exitBtnText.setAttribute('visible', true);
     }
 };
+});
