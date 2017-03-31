@@ -237,10 +237,10 @@ $(document).ready(function(){
 
         for (countedBlocks = 0; countedBlocks < totalBlocks; countedBlocks++) {
             if (listOfBlocks[countedBlocks].getAttribute('active') === 'true') {
-                submittedSequence.push('1');
+                createdSequence.push('1');
             }
             else if (listOfBlocks[countedBlocks].getAttribute('active') === 'false') {
-                submittedSequence.push('0');
+                createdSequence.push('0');
             }
         }
 
