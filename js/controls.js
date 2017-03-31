@@ -217,7 +217,7 @@ $(document).ready(function(){
         functionString = "algorithm" + char;
 
         if (typeof letterFunction === "function") {
-            window[functionString](submittedSequence)();
+            window[functionString](submittedSequence);
         }
     };
 
