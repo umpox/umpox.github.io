@@ -1,4 +1,4 @@
-var algorithmA = function(submittedSequence) {
+var algorithmA = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,0,1,0,0,
@@ -11,6 +11,7 @@ var algorithmA = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -19,7 +20,7 @@ var algorithmA = function(submittedSequence) {
     }
 };
 
-var algorithmB = function(submittedSequence) {
+var algorithmB = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,1,1,0,0,
@@ -32,6 +33,7 @@ var algorithmB = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -40,7 +42,7 @@ var algorithmB = function(submittedSequence) {
     }
 };
 
-var algorithmC = function(submittedSequence) {
+var algorithmC = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,1,1,1,0,
@@ -53,6 +55,7 @@ var algorithmC = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -61,7 +64,7 @@ var algorithmC = function(submittedSequence) {
     }
 };
 
-var algorithmD = function(submittedSequence) {
+var algorithmD = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,1,1,0,0,
@@ -74,6 +77,7 @@ var algorithmD = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -82,7 +86,7 @@ var algorithmD = function(submittedSequence) {
     }
 };
 
-var algorithmE = function(submittedSequence) {
+var algorithmE = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,1,1,1,0,
@@ -95,6 +99,7 @@ var algorithmE = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -103,7 +108,7 @@ var algorithmE = function(submittedSequence) {
     }
 };
 
-var algorithmF = function(submittedSequence) {
+var algorithmF = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,1,1,1,0,
@@ -116,6 +121,7 @@ var algorithmF = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -124,7 +130,7 @@ var algorithmF = function(submittedSequence) {
     }
 };
 
-var algorithmG = function(submittedSequence) {
+var algorithmG = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,1,1,1,0,
@@ -137,6 +143,7 @@ var algorithmG = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -145,7 +152,7 @@ var algorithmG = function(submittedSequence) {
     }
 };
 
-var algorithmH = function(submittedSequence) {
+var algorithmH = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,0,0,0,0,
@@ -158,6 +165,7 @@ var algorithmH = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -166,7 +174,7 @@ var algorithmH = function(submittedSequence) {
     }
 };
 
-var algorithmI = function(submittedSequence) {
+var algorithmI = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,1,1,1,0,
@@ -179,6 +187,7 @@ var algorithmI = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -187,7 +196,7 @@ var algorithmI = function(submittedSequence) {
     }
 };
 
-var algorithmJ = function(submittedSequence) {
+var algorithmJ = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,1,1,1,1,
@@ -200,6 +209,7 @@ var algorithmJ = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -208,7 +218,7 @@ var algorithmJ = function(submittedSequence) {
     }
 };
 
-var algorithmK = function(submittedSequence) {
+var algorithmK = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,0,0,0,1,
@@ -221,6 +231,7 @@ var algorithmK = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -229,7 +240,7 @@ var algorithmK = function(submittedSequence) {
     }
 };
 
-var algorithmL = function(submittedSequence) {
+var algorithmL = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,1,1,0,0,
@@ -242,6 +253,7 @@ var algorithmL = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -250,7 +262,7 @@ var algorithmL = function(submittedSequence) {
     }
 };
 
-var algorithmM = function(submittedSequence) {
+var algorithmM = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,0,0,0,0,
@@ -263,6 +275,7 @@ var algorithmM = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -271,7 +284,7 @@ var algorithmM = function(submittedSequence) {
     }
 };
 
-var algorithmN = function(submittedSequence) {
+var algorithmN = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,1,1,1,0,
@@ -284,6 +297,7 @@ var algorithmN = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -292,7 +306,7 @@ var algorithmN = function(submittedSequence) {
     }
 };
 
-var algorithmO = function(submittedSequence) {
+var algorithmO = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,1,1,0,0,
@@ -305,6 +319,7 @@ var algorithmO = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -313,7 +328,7 @@ var algorithmO = function(submittedSequence) {
     }
 };
 
-var algorithmP = function(submittedSequence) {
+var algorithmP = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,1,1,1,0,
@@ -326,6 +341,7 @@ var algorithmP = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -334,7 +350,7 @@ var algorithmP = function(submittedSequence) {
     }
 };
 
-var algorithmQ = function(submittedSequence) {
+var algorithmQ = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,1,1,1,0,
@@ -347,6 +363,7 @@ var algorithmQ = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -355,7 +372,7 @@ var algorithmQ = function(submittedSequence) {
     }
 };
 
-var algorithmR = function(submittedSequence) {
+var algorithmR = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,1,1,0,0,
@@ -368,6 +385,7 @@ var algorithmR = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -376,7 +394,7 @@ var algorithmR = function(submittedSequence) {
     }
 };
 
-var algorithmS = function(submittedSequence) {
+var algorithmS = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         0,1,1,1,0,
@@ -389,6 +407,7 @@ var algorithmS = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -397,7 +416,7 @@ var algorithmS = function(submittedSequence) {
     }
 };
 
-var algorithmT = function(submittedSequence) {
+var algorithmT = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,1,1,1,1,
@@ -410,6 +429,7 @@ var algorithmT = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -418,7 +438,7 @@ var algorithmT = function(submittedSequence) {
     }
 };
 
-var algorithmU = function(submittedSequence) {
+var algorithmU = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,0,0,0,1,
@@ -431,6 +451,7 @@ var algorithmU = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -439,7 +460,7 @@ var algorithmU = function(submittedSequence) {
     }
 };
 
-var algorithmV = function(submittedSequence) {
+var algorithmV = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,0,0,0,1,
@@ -452,6 +473,7 @@ var algorithmV = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -460,7 +482,7 @@ var algorithmV = function(submittedSequence) {
     }
 };
 
-var algorithmW = function(submittedSequence) {
+var algorithmW = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,0,0,0,1,
@@ -473,6 +495,7 @@ var algorithmW = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -481,7 +504,7 @@ var algorithmW = function(submittedSequence) {
     }
 };
 
-var algorithmX = function(submittedSequence) {
+var algorithmX = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,0,0,0,1,
@@ -494,6 +517,7 @@ var algorithmX = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -502,7 +526,7 @@ var algorithmX = function(submittedSequence) {
     }
 };
 
-var algorithmY = function(submittedSequence) {
+var algorithmY = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,0,0,1,0,
@@ -515,6 +539,7 @@ var algorithmY = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -523,7 +548,7 @@ var algorithmY = function(submittedSequence) {
     }
 };
 
-var algorithmZ = function(submittedSequence) {
+var algorithmZ = function(submittedSequence, startTime) {
     var correctSequence = 
     [
         1,1,1,1,0,
@@ -536,6 +561,7 @@ var algorithmZ = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+        submitStatsToDb(startTime);
     }
     else 
     {
@@ -554,4 +580,14 @@ var showSuccessArea = function() {
     $('#socialBtnTxt').attr('visible', 'true');
     $('#exitBtn').attr('visible', 'true');
     $('#exitBtnText').attr('visible', 'true');
+};
+
+var submitStatsToDb = function(oldTime) {
+    var newTime = new Date();
+
+    var seconds = (newTime.getTime() - oldTime.getTime()) / 1000;
+
+    firebase.database().ref('stats/' + currentTime).set({
+        time: seconds
+    });
 };
