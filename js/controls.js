@@ -214,11 +214,8 @@ $(document).ready(function(){
             }
         }
 
-        functionString = "algorithm" + char;
-
-        if (typeof letterFunction === "function") {
-            window[functionString](submittedSequence);
-        }
+        functionString = "algorithm" + char;       
+        window[functionString](submittedSequence);
     };
 
     //SET BLOCK STATES
