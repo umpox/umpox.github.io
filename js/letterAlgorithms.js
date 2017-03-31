@@ -14,7 +14,8 @@ var algorithmA = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -34,7 +35,8 @@ var algorithmB = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -54,7 +56,8 @@ var algorithmC = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -74,7 +77,8 @@ var algorithmD = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -94,7 +98,8 @@ var algorithmE = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -114,7 +119,8 @@ var algorithmF = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -134,7 +140,8 @@ var algorithmG = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -154,7 +161,8 @@ var algorithmH = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -174,7 +182,8 @@ var algorithmI = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -194,7 +203,8 @@ var algorithmJ = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -214,7 +224,8 @@ var algorithmK = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -234,7 +245,8 @@ var algorithmL = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -254,7 +266,8 @@ var algorithmM = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -274,7 +287,8 @@ var algorithmN = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -294,7 +308,8 @@ var algorithmO = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -314,7 +329,8 @@ var algorithmP = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -334,7 +350,8 @@ var algorithmQ = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -354,7 +371,8 @@ var algorithmR = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -374,7 +392,8 @@ var algorithmS = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -394,7 +413,8 @@ var algorithmT = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -414,7 +434,8 @@ var algorithmU = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -434,7 +455,8 @@ var algorithmV = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -454,7 +476,8 @@ var algorithmW = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -474,7 +497,8 @@ var algorithmX = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -494,7 +518,8 @@ var algorithmY = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 
@@ -514,7 +539,8 @@ var algorithmZ = function(submittedSequence) {
     }
     else 
     {
-        console.log('Error');
+         submitBtn.setAttribute('color', 'red');
+         setTimeout(function(){submitBtn.setAttribute('color', 'white')}, 750);
     }
 };
 

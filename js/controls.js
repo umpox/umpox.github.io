@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var box = document.getElementsByTagName('a-box');
+    var box = document.getElementsByClassName('tyBlock');
     var y_cord, x_cord = 1;
     var max_x = '5', max_y = '5';
     var min_x = '1', min_y = '1';
@@ -41,7 +41,7 @@ $(document).ready(function(){
         //Hacky fix for A-Frames cursor problem
         //Recreates the cursor to update click handlers
         cursor.removeAttribute('raycaster');
-        cursor.setAttribute('raycaster', 'objects: .clickable');
+        cursor.setAttribute('raycaster', 'objects: .clickable, .submitClick');
     };
 
     var generateRandomArray = function(length, totalBlocks) {
@@ -213,7 +213,7 @@ $(document).ready(function(){
                 submittedSequence.push('0');
             }
         }
-        console.log(submittedSequence);
+        
         functionString = "algorithm" + char;       
         window[functionString](submittedSequence);
     };
