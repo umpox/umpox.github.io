@@ -9,6 +9,7 @@ $(document).ready(function(){
     var submitTxt = document.getElementById('submitTxt');
     var saveBtn = document.getElementById('saveBtn');
     var saveTxt = document.getElementById('saveTxt');
+    var playAgainBtn = document.getElementById('playAgainBtn');
     var letterImage = document.getElementById('letter');
     var leaderboardSpace = document.getElementById('leaderboard');
     var successArea = document.getElementById('success');
@@ -250,6 +251,7 @@ $(document).ready(function(){
     }
 
     submitBtn.addEventListener('click', submitCreatedLetter, false);
+    playAgainBtn.addEventListener('click', generateBlocks(5,5), false);    
 
     //Set final colours of certain elements
 });
