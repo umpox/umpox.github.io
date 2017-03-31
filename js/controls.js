@@ -21,6 +21,7 @@ $(document).ready(function(){
     var gridY = 5;
     var gridX = 5;
     var mode = 'normal';
+    var startTime = null;
     // Get a reference to the database service
     var database = firebase.database();
 
@@ -141,6 +142,11 @@ $(document).ready(function(){
     generateBlocks(gridY, gridX);
 
     var moveBlock = function(currentBlock) {
+        //Start the timer
+        if (starttime === null) {
+            startTime = new Date();
+        }
+
         //Get current block color used later to change the empty block color
         currentBlockColor = this.getAttribute("color");
         currentBlockStatus = this.getAttribute("active");
@@ -228,7 +234,7 @@ $(document).ready(function(){
         }
 
         functionString = "algorithm" + char;       
-        window[functionString](submittedSequence);
+        window[functionString](submittedSequence, startTime);
     };
 
     var saveCreatedLetter =  function() {
