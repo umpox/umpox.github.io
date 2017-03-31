@@ -213,7 +213,7 @@ $(document).ready(function(){
                 submittedSequence.push('0');
             }
         }
-
+        console.log(submittedSequence);
         functionString = "algorithm" + char;       
         window[functionString](submittedSequence);
     };
