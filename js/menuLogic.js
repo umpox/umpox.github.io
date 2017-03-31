@@ -94,12 +94,8 @@ var loginAdmin = function() {
     var loginPassword = document.getElementById('adminPassword');
     var loginError = document.getElementById('adminError');
 
-        console.log('test1');
-
-
    firebase.auth().signInWithEmailAndPassword('I.Mitchell@ljmu.ac.uk', loginPassword.value).then(function() {
         $("#adminMenu-loginMenu").hide();
-        console.log('test');
     }).catch(function(error) {
         loginError.innerHTML = error;
     });       
