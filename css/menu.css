@@ -69,7 +69,7 @@ html {
     margin-top: 0px;
 }
 
-#loginError, #registerError {
+#loginError, #registerError, #adminError {
     width: 100%;
     color: red;
 }
