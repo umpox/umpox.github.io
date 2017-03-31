@@ -251,7 +251,7 @@ $(document).ready(function(){
     }
 
     submitBtn.addEventListener('click', submitCreatedLetter, false);
-    playAgainBtn.addEventListener('click', generateBlocks(5,5), false);    
+    playAgainBtn.addEventListener('click', generateBlocks, false);    
 
     //Set final colours of certain elements
 });
