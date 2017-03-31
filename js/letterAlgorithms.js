@@ -12,6 +12,10 @@ var algorithmA = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmB = function(submittedSequence) {
@@ -27,6 +31,10 @@ var algorithmB = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -44,6 +52,10 @@ var algorithmC = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmD = function(submittedSequence) {
@@ -59,6 +71,10 @@ var algorithmD = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -76,6 +92,10 @@ var algorithmE = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmF = function(submittedSequence) {
@@ -91,6 +111,10 @@ var algorithmF = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -108,6 +132,10 @@ var algorithmG = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmH = function(submittedSequence) {
@@ -123,6 +151,10 @@ var algorithmH = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -140,6 +172,10 @@ var algorithmI = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmJ = function(submittedSequence) {
@@ -155,6 +191,10 @@ var algorithmJ = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -172,6 +212,10 @@ var algorithmK = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmL = function(submittedSequence) {
@@ -187,6 +231,10 @@ var algorithmL = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -204,6 +252,10 @@ var algorithmM = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmN = function(submittedSequence) {
@@ -219,6 +271,10 @@ var algorithmN = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -236,6 +292,10 @@ var algorithmO = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmP = function(submittedSequence) {
@@ -251,6 +311,10 @@ var algorithmP = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -268,6 +332,10 @@ var algorithmQ = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmR = function(submittedSequence) {
@@ -283,6 +351,10 @@ var algorithmR = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -300,6 +372,10 @@ var algorithmS = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmT = function(submittedSequence) {
@@ -315,6 +391,10 @@ var algorithmT = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -332,6 +412,10 @@ var algorithmU = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmV = function(submittedSequence) {
@@ -347,6 +431,10 @@ var algorithmV = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -364,6 +452,10 @@ var algorithmW = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmX = function(submittedSequence) {
@@ -379,6 +471,10 @@ var algorithmX = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
@@ -396,6 +492,10 @@ var algorithmY = function(submittedSequence) {
     {
         showSuccessArea();
     }
+    else 
+    {
+        console.log('Error');
+    }
 };
 
 var algorithmZ = function(submittedSequence) {
@@ -411,6 +511,10 @@ var algorithmZ = function(submittedSequence) {
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
+    }
+    else 
+    {
+        console.log('Error');
     }
 };
 
