@@ -76,6 +76,18 @@ $(document).ready(function(){
         //Generate random array of 11 numbers to assign to the black boxes
         var randomActiveBlocks = generateRandomArray(11, totalBlocks);
 
+        if ($('#success').attr('visible') === 'true') {
+            $('#success').attr('visible', 'false');
+            $('#successTitle').attr('visible', 'false');
+            $('#successText').attr('visible', 'false');
+            $('#playAgainBtn').attr('visible', 'false');
+            $('#playAgainTxt').attr('visible', 'false');
+            $('#socialBtn').attr('visible', 'false');
+            $('#socialBtnTxt').attr('visible', 'false');
+            $('#exitBtn').attr('visible', 'false');
+            $('#exitBtnText').attr('visible', 'false');        
+        }
+
         if (mode === 'normal') {
             letterImage.setAttribute('visible', false);
             leaderboardSpace.setAttribute('visible', false);
@@ -213,7 +225,7 @@ $(document).ready(function(){
                 submittedSequence.push('0');
             }
         }
-        
+
         functionString = "algorithm" + char;       
         window[functionString](submittedSequence);
     };
