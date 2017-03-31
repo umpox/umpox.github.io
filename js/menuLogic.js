@@ -18,16 +18,19 @@ firebase.auth().getRedirectResult().then(function(result) {
 var navigateLogin = function() {
     $("#mainMenu").hide();
     $("#mainMenu-loginMenu").show();
+    $("#adminLogin").hide();
 };
 
 var navigateRegister = function() {
     $("#mainMenu").hide();
-    $("#mainMenu-registerMenu").show();  
+    $("#mainMenu-registerMenu").show();
+    $("#adminLogin").hide();
 };
 
 var navigateFreePlay = function() {
     $("#mainMenu").hide(); 
     $("#controls").show();
+    $("#adminLogin").hide();
 };
 
 var navigateModes = function() {
@@ -49,6 +52,7 @@ var navigateMenu = function() {
     $("#mainMenu-accountRecovery").hide();
     $("#modes").hide();
     $("#logoutBtn").hide();
+    $("#adminLogin").show();
 };
 
 var navigateType = function() {

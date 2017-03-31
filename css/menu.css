@@ -39,14 +39,14 @@ html {
     min-height: 350px;
 }
 
-.signOutBtn {
+.signOutBtn, #adminLogin {
     float: left;
     margin: 0 auto;
     top: 5%;
     max-width: 600px;
 }
 
-.signOutBtn #logoutBtn {
+.signOutBtn #logoutBtn, #adminLogin #adminBtn {
     width: 50%;
 }
 
@@ -131,7 +131,7 @@ html {
         margin-top: auto;
     }
 
-    .signOutBtn #logoutBtn {
+    .signOutBtn #logoutBtn, #adminLogin #adminBtn {
         top: 20%;
         width: 25%;
     }
