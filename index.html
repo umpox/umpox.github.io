@@ -136,6 +136,23 @@
                         <img onclick="loadGame(10, 10, 'normal')" src="resources/grid10x10.png" >                                          
                     </div>
 
+                    <div id="adminMenu-loginMenu" style="display: none">
+
+                        <div class="form-group row mainMenu-input">
+                            <input id="loginPassword" type="password" class="form-control" placeholder="Enter admin password">  
+                        </div>
+
+                        <div id="mainMenu-navButtons">
+                            <button id="mainMenu-loginBtn" type="submit" onclick="loginAdmin()" class="menuBtn btn btn-primary btn-lg btn-block">
+                                Submit
+                            </button>                               
+                            <button id="mainMenu-backBtn" type="button" onclick="navigateMenu()" class="menuBtn btn btn-default btn-lg btn-block">
+                                Back
+                            </button>                               
+                        </div>  
+                        <span id="loginError"></span>                                        
+                    </div>
+
                 </div>
 
                 <div class="col-xs-12 signOutBtn">
@@ -148,7 +165,9 @@
                     <button id="adminBtn" type="button" onclick="navigateAdmin()" class="btn btn-default btn-lg btn-block">
                         Admin Login
                     </button>                      
-                </div>                  
+                </div>
+            
+
             </div>
         </div>
     </body>

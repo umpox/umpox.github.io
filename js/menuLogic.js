@@ -53,11 +53,17 @@ var navigateMenu = function() {
     $("#modes").hide();
     $("#logoutBtn").hide();
     $("#adminLogin").show();
+    $("#adminMenu-loginMenu").hide();
 };
 
 var navigateType = function() {
     $("#modes").hide();
     $("#controls").show();
+};
+
+var navigateAdmin = function() {
+    $("#adminMenu-loginMenu").show();
+    $("#mainMenu").hide();
 };
 
 var loadForgotCredential = function() {
@@ -83,6 +89,17 @@ var loginUser = function() {
         loginError.innerHTML = error;
     });
 };
+
+var loginAdmin = function() {
+    var loginPassword = document.getElementById('loginPassword');
+    var loginError = document.getElementById('loginError');
+
+   firebase.auth().signInWithEmailAndPassword('I.Mitchell@ljmu.ac.uk', loginPassword.value).then(function() {
+        $("#adminMenu-loginMenu").hide();
+    }).catch(function(error) {
+        loginError.innerHTML = error;
+    });       
+}
 
 var loginUserGoogle = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
