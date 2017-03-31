@@ -231,6 +231,24 @@ $(document).ready(function(){
         window[functionString](submittedSequence);
     };
 
+    var saveCreatedLetter =  function() {
+        var createdSequence  = [];
+        var listOfBlocks = document.getElementsByClassName('tyBlock');
+
+        for (countedBlocks = 0; countedBlocks < totalBlocks; countedBlocks++) {
+            if (listOfBlocks[countedBlocks].getAttribute('active') === 'true') {
+                submittedSequence.push('1');
+            }
+            else if (listOfBlocks[countedBlocks].getAttribute('active') === 'false') {
+                submittedSequence.push('0');
+            }
+        }
+
+        firebase.database().ref('submissions/').set({
+            grid: createdSequence
+        });
+    };
+
     //SET BLOCK STATES
     for (var i = 0; i < box.length; i++) {
 
@@ -251,6 +269,7 @@ $(document).ready(function(){
     }
 
     submitBtn.addEventListener('click', submitCreatedLetter, false);
+    saveBtn.addEventListener('click', saveCreatedLetter, false);
     playAgainBtn.addEventListener('click', generateBlocks, false);    
 
     //Set final colours of certain elements
