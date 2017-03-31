@@ -143,7 +143,7 @@ $(document).ready(function(){
 
     var moveBlock = function(currentBlock) {
         //Start the timer
-        if (starttime === null) {
+        if (startTime === null) {
             startTime = new Date();
         }
 
