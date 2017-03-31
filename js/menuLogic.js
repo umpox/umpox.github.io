@@ -8,9 +8,11 @@ firebase.auth().getRedirectResult().then(function(result) {
     }
     user = result.user;
 
-    $("#mainMenu").hide();
-    $("#modes").show();
-    $("#logoutBtn").show();
+    if (user !== null) {
+        $("#mainMenu").hide();
+        $("#modes").show();
+        $("#logoutBtn").show();
+    }
 });
 
 var navigateLogin = function() {
