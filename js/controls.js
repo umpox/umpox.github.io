@@ -215,10 +215,9 @@ $(document).ready(function(){
         }
 
         functionString = "algorithm" + char;
-        letterFunction = window[functionString](submittedSequence);
 
         if (typeof letterFunction === "function") {
-            letterFunction();
+            window[functionString](submittedSequence)();
         }
     };
 
