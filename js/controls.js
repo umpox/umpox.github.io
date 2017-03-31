@@ -234,6 +234,8 @@ $(document).ready(function(){
     var saveCreatedLetter =  function() {
         var createdSequence  = [];
         var listOfBlocks = document.getElementsByClassName('tyBlock');
+        var currentDate = new Date();
+        var currentTime = currentDate.getTime().toString();
 
         for (countedBlocks = 0; countedBlocks < totalBlocks; countedBlocks++) {
             if (listOfBlocks[countedBlocks].getAttribute('active') === 'true') {
@@ -244,7 +246,7 @@ $(document).ready(function(){
             }
         }
 
-        firebase.database().ref('submissions/').set({
+        firebase.database().ref('submissions/' + currentTime).set({
             grid: createdSequence
         });
     };
