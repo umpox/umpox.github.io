@@ -5,6 +5,7 @@ $(document).ready(function(){
     var min_x = '1', min_y = '1';
     var aboveBox, belowBox, leftBox, rightBox;
     var cursor = document.getElementById('cursor');
+    var camera = document.getElementById('3DCam');
     var submitBtn = document.getElementById('submitBtn');
     var submitTxt = document.getElementById('submitTxt');
     var saveBtn = document.getElementById('saveBtn');
@@ -21,6 +22,7 @@ $(document).ready(function(){
     var gridY = 5;
     var gridX = 5;
     var mode = 'normal';
+    var gridState = "";
     var startTime = null;
     // Get a reference to the database service
     var database = firebase.database();
@@ -38,6 +40,7 @@ $(document).ready(function(){
     gridY = Number(getQueryVariable('gridY'));
     gridX = Number(getQueryVariable('gridX'));
     mode = getQueryVariable('mode');
+    gridState = JSON.parse("[" + getQueryVariable('gridState') + "]");
 
     var reCursor = function() {
         //Hacky fix for A-Frames cursor problem
@@ -114,8 +117,46 @@ $(document).ready(function(){
             horizontalDistance = originalHorizontalDistance;
         }
 
-        for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {
+        if (mode === 'admin' && gridState.length > 0) {
+            letterImage.setAttribute('visible', false);
+            leaderboardSpace.setAttribute('visible', false);
+            submitBtn.setAttribute('visible', false);
+            submitTxt.setAttribute('visible', false);
+            saveBtn.setAttribute('visible', false);
+            saveTxt.setAttribute('visible', false);  
 
+            $('#instructions').attr('visible', 'false');
+            $('#instructionTitle').attr('visible', 'false');
+            $('#instructionGoal').attr('visible', 'false');
+            $('#instructionPointOne').attr('visible', 'false');
+            $('#instructionPointTwo').attr('visible', 'false');
+            $('#instructionPointThree').attr('visible', 'false');         
+
+            for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {
+                if (gridState[blockCount] === 1) {
+                    $('#grid').append('<a-box position="' + verticalDistance + ' ' + horizontalDistance  + ' -1.5"  rotation="0" width="0.3" height="0.3" depth="0.05" color="#1c1c1f"></a-box>');
+                }
+                else {
+                    $('#grid').append('<a-box position="' + verticalDistance + ' ' + horizontalDistance  + ' -1.5"  rotation="0" width="0.3" height="0.3" depth="0.05" color="#dfe0e6"></a-box>');                   
+                }
+
+                if (x === 1) {
+                    x = width;
+                    y = y-1;
+                    horizontalDistance = parseFloat( (horizontalDistance - 0.4).toFixed(2) );
+                    verticalDistance = originalVerticalDistance;
+                }
+                else {
+                    x = x-1;
+                    verticalDistance = parseFloat( (verticalDistance + 0.35).toFixed(2) );
+                }
+            }        
+            cursor.setAttribute('visible', 'false');
+            camera.setAttribute('rotation', '0');
+            return;
+        }
+
+        for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {
             if($.inArray(blockCount, randomActiveBlocks) > -1) {
                 attributeActive = true;
             }
@@ -134,7 +175,6 @@ $(document).ready(function(){
                 x = x-1;
                 verticalDistance = parseFloat( (verticalDistance + 0.35).toFixed(2) );
             }
-
         } 
 
     };
