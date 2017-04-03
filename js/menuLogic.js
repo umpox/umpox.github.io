@@ -43,6 +43,7 @@ var navigateGrids = function() {
     $("#mainLogo").hide();
     $("#mainMenu").hide(); 
     $("#grids").show();
+    $("#adminLogin").hide();
 };
 
 var navigateMenu = function() {
@@ -63,6 +64,7 @@ var navigateType = function() {
 
 var navigateAdmin = function() {
     $("#adminMenu-loginMenu").show();
+    $("#adminLogin").hide();    
     $("#mainMenu").hide();
 };
 
@@ -84,6 +86,7 @@ var loginUser = function() {
    firebase.auth().signInWithEmailAndPassword(loginEmail.value, loginPassword.value).then(function() {
         $("#mainMenu-loginMenu").hide();
         $("#modes").show();
+        $("#adminLogin").hide();
         $("#logoutBtn").show();
     }).catch(function(error) {
         loginError.innerHTML = error;
