@@ -109,13 +109,20 @@ var loginAdmin = function() {
         //Get data from database and display grids
         firebase.database().ref('/submissions/').once('value').then(function(snapshot) {
             for (var gridSpace in snapshot.val()) {
-                adminSpace.append('<button onclick="" class="btn btn-default btn-lg btn-block">' + gridSpace + '</button><br>');
+                adminSpace.append('<button onclick="loadAdminGrid(' + gridSpace + ')" class="btn btn-default btn-lg btn-block">' + gridSpace + '</button><br>');
             }
         });
     }).catch(function(error) {
         adminError.innerHTML = error;
     });       
 }
+
+var loadAdminGrid = function(gridKey) {
+    //Get data from database and display grids
+    firebase.database().ref('/submissions/' + gridKey).once('value').then(function(snapshot) {
+        loadGame(5, 5, 'admin', snapshot.val().grid);
+    });
+};
 
 var loginUserGoogle = function() {
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -139,8 +146,11 @@ var registerUser = function() {
     });
 };
 
-var loadGame = function(x, y, mode) {
-    var text = encodeURI('VRgame.html?gridY=' + y + '&gridX=' + x + '&mode=' + mode);
+var loadGame = function(x, y, mode, storedGrid) {
+    if (storedGrid === undefined) {
+        storedGrid = '';
+    }
+    var text = encodeURI('VRgame.html?gridY=' + y + '&gridX=' + x + '&mode=' + mode + '&gridState=' + storedGrid);
     window.location.href = text;
 };
 
