@@ -99,6 +99,7 @@ var loginAdmin = function() {
     var adminError = document.getElementById('adminError');
 
    firebase.auth().signInWithEmailAndPassword('I.Mitchell@ljmu.ac.uk', adminPassword.value).then(function() {
+        var adminSpace = $('#adminSpace');
         $("#adminMenu-loginMenu").hide();
         $("#admin-Results").show();
         $("#adminLogin").hide();
@@ -107,7 +108,9 @@ var loginAdmin = function() {
 
         //Get data from database and display grids
         firebase.database().ref('/submissions/').once('value').then(function(snapshot) {
-            console.log(snapshot.val());
+            for (var gridSpace in snapshot.val()) {
+                adminSpace.append('<button onclick="" class="btn btn-default btn-lg btn-block">' + gridSpace + '</button><br>');
+            }
         });
     }).catch(function(error) {
         adminError.innerHTML = error;
