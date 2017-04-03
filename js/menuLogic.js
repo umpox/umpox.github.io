@@ -120,7 +120,18 @@ var loginAdmin = function() {
 var loadAdminGrid = function(gridKey) {
     //Get data from database and display grids
     firebase.database().ref('/submissions/' + gridKey).once('value').then(function(snapshot) {
-        loadGame(5, 5, 'admin', snapshot.val().grid);
+
+        //Work out the grid size and then start game
+        if (snapshot.val().grid.length === 25) {
+            loadGame(5, 5, 'admin', snapshot.val().grid);
+        }
+        else if (snapshot.val().grid.length === 35) {
+            loadGame(7, 5, 'admin', snapshot.val().grid);
+        }
+        else {
+            loadGame(10, 10, 'admin', snapshot.val().grid);
+        }
+
     });
 };
 
