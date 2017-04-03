@@ -100,6 +100,8 @@ $(document).ready(function(){
             submitTxt.setAttribute('visible', false);
             saveBtn.setAttribute('visible', true);
             saveTxt.setAttribute('visible', true);
+            $('#instructionGoal').attr('value', 'Goal: Rearrange the blocks behind you\n to create a letter.');
+            $('#instructionPointTwo').attr('value', "2. When you are satisfied with your newly\n created letter, place the red cursor\n over the 'Save' button.");
         }
 
         if (height === 5 && width === 7) {
