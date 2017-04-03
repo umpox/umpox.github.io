@@ -88,6 +88,7 @@ var loginUser = function() {
         $("#modes").show();
         $("#adminLogin").hide();
         $("#logoutBtn").show();
+        user = loginEmail.value;
     }).catch(function(error) {
         loginError.innerHTML = error;
     });
@@ -103,6 +104,11 @@ var loginAdmin = function() {
         $("#adminLogin").hide();
         $("#mainLogo").hide();
         $("#mainMenu").hide(); 
+
+        //Get data from database and display grids
+        firebase.database().ref('/submissions/').once('value').then(function(snapshot) {
+            console.log(snapshot.val());
+        });
     }).catch(function(error) {
         adminError.innerHTML = error;
     });       
