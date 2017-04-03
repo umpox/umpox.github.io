@@ -64,7 +64,7 @@ html {
     margin: 20px auto;
 }
 
-#grids #gridsTitle {
+#grids #gridsTitle, #admin-Results #adminTitle {
     text-align: center;
     margin-top: 0px;
 }

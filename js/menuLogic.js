@@ -91,13 +91,17 @@ var loginUser = function() {
 };
 
 var loginAdmin = function() {
-    var loginPassword = document.getElementById('adminPassword');
-    var loginError = document.getElementById('adminError');
+    var adminPassword = document.getElementById('adminPassword');
+    var adminError = document.getElementById('adminError');
 
-   firebase.auth().signInWithEmailAndPassword('I.Mitchell@ljmu.ac.uk', loginPassword.value).then(function() {
+   firebase.auth().signInWithEmailAndPassword('I.Mitchell@ljmu.ac.uk', adminPassword.value).then(function() {
         $("#adminMenu-loginMenu").hide();
+        $("#admin-Results").show();
+        $("#adminLogin").hide();
+        $("#mainLogo").hide();
+        $("#mainMenu").hide(); 
     }).catch(function(error) {
-        loginError.innerHTML = error;
+        adminError.innerHTML = error;
     });       
 }
 
