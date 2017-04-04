@@ -323,7 +323,7 @@ var onPageLoad = function() {
     };
 
     var shareToTwitter = function() {
-        window.location.href = 'https://twitter.com/intent/tweet/complete?url=umpox.github.io&text=I just completed the letter ' + char + ' with a time of ' + seconds + ' seconds #TyBlocks';
+        window.location.href = 'https://twitter.com/intent/tweet?url=umpox.github.io&text=I just completed the letter ' + char + ' with a time of ' + seconds + ' seconds #TyBlocks';
     };
 
     //SET BLOCK STATES
