@@ -1,3 +1,5 @@
+var seconds;
+
 var algorithmA = function(submittedSequence, startTime) {
     var correctSequence = 
     [
@@ -587,7 +589,7 @@ var showSuccessArea = function() {
 var submitStatsToDb = function(oldTime) {
     var newTime = new Date();
 
-    var seconds = (newTime.getTime() - oldTime.getTime()) / 1000;
+    seconds = (newTime.getTime() - oldTime.getTime()) / 1000;
 
     firebase.database().ref('stats/' + 'username').set({
         time: seconds

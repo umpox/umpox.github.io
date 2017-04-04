@@ -16,6 +16,7 @@ var onPageLoad = function() {
     var saveTxt = document.getElementById('saveTxt');
     var playAgainBtn = document.getElementById('playAgainBtn');
     var exitBtn = document.getElementById('exitBtn');
+    var socialBtn = document.getElementById('socialBtn');
     var letterImage = document.getElementById('letter');
     var leaderboardSpace = document.getElementById('leaderboard');
     var successArea = document.getElementById('success');
@@ -321,6 +322,10 @@ var onPageLoad = function() {
         window.location.href = "https://umpox.github.io";
     };
 
+    var shareToTwitter = function() {
+        window.location.href = 'https://twitter.com/intent/tweet/complete?url=umpox.github.io&text=I just completed the letter ' + char + ' with a time of ' + seconds + ' seconds #TyBlocks';
+    };
+
     //SET BLOCK STATES
     for (var i = 0; i < box.length; i++) {
 
@@ -344,6 +349,7 @@ var onPageLoad = function() {
     saveBtn.addEventListener('click', saveCreatedLetter, false);
     playAgainBtn.addEventListener('click', playAgain, false);    
     exitBtn.addEventListener('click', exitProgram, false);
+    socialBtn.addEventListener('click', shareToTwitter, false);
     //Set final colours of certain elements
 };
 
