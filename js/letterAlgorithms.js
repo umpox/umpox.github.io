@@ -578,8 +578,10 @@ var showSuccessArea = function() {
     $('#playAgainTxt').attr('visible', 'true');
     $('#socialBtn').attr('visible', 'true');
     $('#socialBtnTxt').attr('visible', 'true');
+    $('#socialBtnWarn').attr('visible', 'true');
     $('#exitBtn').attr('visible', 'true');
     $('#exitBtnText').attr('visible', 'true');
+    $('#exitBtnWarn').attr('visible', 'true');
 };
 
 var submitStatsToDb = function(oldTime) {

@@ -305,8 +305,10 @@ var onPageLoad = function() {
         $('#playAgainTxt').attr('visible', 'false');
         $('#socialBtn').attr('visible', 'false');
         $('#socialBtnTxt').attr('visible', 'false');
+        $('#socialBtnWarn').attr('visible', 'false');
         $('#exitBtn').attr('visible', 'false');
         $('#exitBtnText').attr('visible', 'false');
+        $('#exitBtnWarn').attr('visible', 'false');
 
         //Rescramble blocks     
         removeAllBlocks(); 
