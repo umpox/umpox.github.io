@@ -167,7 +167,7 @@ var loadGame = function(x, y, mode, storedGrid) {
         user = 'anonymous';
     }
     else {
-        user = user.split('@')[0];
+        user = user.split('@')[0].toLowerCase();
     }
 
     var text = encodeURI('VRgame.html?gridY=' + y + '&gridX=' + x + '&mode=' + mode + '&user=' + user + '&gridState=' + storedGrid);
