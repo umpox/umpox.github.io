@@ -12,6 +12,7 @@ firebase.auth().getRedirectResult().then(function(result) {
         $("#mainMenu").hide();
         $("#modes").show();
         $("#logoutBtn").show();
+        $("#adminLogin").hide();
     }
 });
 
