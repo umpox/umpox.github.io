@@ -592,7 +592,7 @@ var submitStatsToDb = function(oldTime, char) {
 
     seconds = (newTime.getTime() - oldTime.getTime()) / 1000;
 
-    firebase.database().ref('stats/' + char + '/' + user).set({
+    firebase.database().ref('stats/' + char + '/' + user + '@' + Math.round(newTime/1000)).set({
         time: seconds
     });
 };
