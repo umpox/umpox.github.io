@@ -6,7 +6,7 @@ firebase.auth().getRedirectResult().then(function(result) {
         // This gives you a Google Access Token.
         var token = result.credential.accessToken;
     }
-    user = result.user;
+    user = result.user.email;
 
     if (user !== null) {
         $("#mainMenu").hide();
