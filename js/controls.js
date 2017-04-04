@@ -15,6 +15,7 @@ var onPageLoad = function() {
     var saveBtn = document.getElementById('saveBtn');
     var saveTxt = document.getElementById('saveTxt');
     var playAgainBtn = document.getElementById('playAgainBtn');
+    var exitBtn = document.getElementById('exitBtn');
     var letterImage = document.getElementById('letter');
     var leaderboardSpace = document.getElementById('leaderboard');
     var successArea = document.getElementById('success');
@@ -209,9 +210,7 @@ var onPageLoad = function() {
         char = availableChars.charAt(Math.floor(Math.random() * availableChars.length));
         document.getElementById("currentLetter").src = "resources/completeLetters/" + char + ".png";
     };
-
-     generateLetterAssignment();
-
+    generateLetterAssignment();
 
     var calculateNearbyBlocks = function(currentBlock) {
         y_cord = currentBlock.getAttribute('y');
@@ -316,6 +315,10 @@ var onPageLoad = function() {
         onPageLoad();
     };
 
+    var exitProgram = function() {
+        window.location.href = "https://umpox.github.io";
+    };
+
     //SET BLOCK STATES
     for (var i = 0; i < box.length; i++) {
 
@@ -338,7 +341,8 @@ var onPageLoad = function() {
     submitBtn.addEventListener('click', submitCreatedLetter, false);
     saveBtn.addEventListener('click', saveCreatedLetter, false);
     playAgainBtn.addEventListener('click', playAgain, false);    
-
+    exitBtn.addEventListener('click', exitProgram, false);
     //Set final colours of certain elements
 };
+
 
