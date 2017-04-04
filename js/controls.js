@@ -2,6 +2,18 @@ $(document).ready(function(){
     onPageLoad();
 });
 
+
+//Function used to grab data from the URL
+var getQueryVariable = function(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+};
+
 var onPageLoad = function() {
     var box = document.getElementsByClassName('tyBlock');
     var y_cord, x_cord = 1;
@@ -32,16 +44,6 @@ var onPageLoad = function() {
     var startTime = null;
     // Get a reference to the database service
     var database = firebase.database();
-
-    var getQueryVariable = function(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split("&");
-        for (var i=0;i<vars.length;i++) {
-                var pair = vars[i].split("=");
-                if(pair[0] == variable){return pair[1];}
-        }
-        return(false);
-    };
 
     gridY = Number(getQueryVariable('gridY'));
     gridX = Number(getQueryVariable('gridX'));
@@ -273,7 +275,7 @@ var onPageLoad = function() {
             }
         }
 
-        functionString = "algorithm" + char;       
+        functionString = "algorithm" + char;      
         window[functionString](submittedSequence, startTime);
     };
 
@@ -323,7 +325,7 @@ var onPageLoad = function() {
     };
 
     var shareToTwitter = function() {
-        window.location.href = 'https://twitter.com/intent/tweet?url=umpox.github.io&text=I just completed the letter ' + char + ' with a time of ' + seconds + ' seconds #TyBlocks';
+        window.location.href = 'https://twitter.com/intent/tweet?hashtags=TyBlocks&url=umpox.github.io&text=I just completed the letter ' + char + ' with a time of ' + seconds + ' seconds. Check it out at https://umpox.github.io #TyBlocks';
     };
 
     //SET BLOCK STATES

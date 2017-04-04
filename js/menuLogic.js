@@ -161,7 +161,12 @@ var loadGame = function(x, y, mode, storedGrid) {
     if (storedGrid === undefined) {
         storedGrid = '';
     }
-    var text = encodeURI('VRgame.html?gridY=' + y + '&gridX=' + x + '&mode=' + mode + '&gridState=' + storedGrid);
+
+    if (user === undefined) {
+        user = 'anonymous';
+    }
+
+    var text = encodeURI('VRgame.html?gridY=' + y + '&gridX=' + x + '&mode=' + mode + '&user=' + user + '&gridState=' + storedGrid);
     window.location.href = text;
 };
 
