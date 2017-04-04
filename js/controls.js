@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    onPageLoad();
+});
+
+var onPageLoad = function() {
     var box = document.getElementsByClassName('tyBlock');
     var y_cord, x_cord = 1;
     var max_x = '5', max_y = '5';
@@ -80,18 +84,6 @@ $(document).ready(function(){
 
         //Generate random array of 11 numbers to assign to the black boxes
         var randomActiveBlocks = generateRandomArray(11, totalBlocks);
-
-        if ($('#success').attr('visible') === 'true') {
-            $('#success').attr('visible', 'false');
-            $('#successTitle').attr('visible', 'false');
-            $('#successText').attr('visible', 'false');
-            $('#playAgainBtn').attr('visible', 'false');
-            $('#playAgainTxt').attr('visible', 'false');
-            $('#socialBtn').attr('visible', 'false');
-            $('#socialBtnTxt').attr('visible', 'false');
-            $('#exitBtn').attr('visible', 'false');
-            $('#exitBtnText').attr('visible', 'false');        
-        }
 
         if (mode === 'normal') {
             letterImage.setAttribute('visible', false);
@@ -182,6 +174,12 @@ $(document).ready(function(){
     };
 
     generateBlocks(gridY, gridX);
+
+    var removeAllBlocks = function() {
+        while (box[0]) {
+            box[0].parentNode.removeChild(box[0]);
+        }
+    };
 
     var moveBlock = function(currentBlock) {
         //Start the timer
@@ -279,7 +277,7 @@ $(document).ready(function(){
         window[functionString](submittedSequence, startTime);
     };
 
-    var saveCreatedLetter =  function() {
+    var saveCreatedLetter = function() {
         var createdSequence  = [];
         var listOfBlocks = document.getElementsByClassName('tyBlock');
         var currentDate = new Date();
@@ -297,6 +295,25 @@ $(document).ready(function(){
         firebase.database().ref('submissions/' + currentTime).set({
             grid: createdSequence
         });
+    };
+
+    var playAgain = function() {
+        //Hide success area
+        $('#success').attr('visible', 'false');
+        $('#successTitle').attr('visible', 'false');
+        $('#successText').attr('visible', 'false');
+        $('#playAgainBtn').attr('visible', 'false');
+        $('#playAgainTxt').attr('visible', 'false');
+        $('#socialBtn').attr('visible', 'false');
+        $('#socialBtnTxt').attr('visible', 'false');
+        $('#exitBtn').attr('visible', 'false');
+        $('#exitBtnText').attr('visible', 'false');
+
+        //Rescramble blocks     
+        removeAllBlocks(); 
+
+        //Rerun the entire script  
+        onPageLoad();
     };
 
     //SET BLOCK STATES
@@ -320,8 +337,8 @@ $(document).ready(function(){
 
     submitBtn.addEventListener('click', submitCreatedLetter, false);
     saveBtn.addEventListener('click', saveCreatedLetter, false);
-    playAgainBtn.addEventListener('click', generateBlocks, false);    
+    playAgainBtn.addEventListener('click', playAgain, false);    
 
     //Set final colours of certain elements
-});
+};
 
