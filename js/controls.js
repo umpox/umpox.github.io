@@ -299,6 +299,19 @@ var onPageLoad = function() {
         });
     };
 
+    var loadLeaderboard = function() {
+        //Get data from database and display grids
+        firebase.database().ref('/stats/' + char).once('value').then(function(snapshot) {
+            for (stat in snapshot.val() ){
+                $('#leaderboardName').attr("value", function() { return $(this).attr("value") + stat.split('@')[0] + '\n'; });
+                $('#leaderboardTime').attr("value", function() { return $(this).attr("value") + snapshot.val()[stat].time + '\n'; });                
+            }
+        });
+
+    };
+
+    loadLeaderboard();
+
     var playAgain = function() {
         //Hide success area
         $('#success').attr('visible', 'false');
