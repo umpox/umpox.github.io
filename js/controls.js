@@ -42,9 +42,6 @@ var onPageLoad = function() {
     var mode = 'normal';
     var gridState = "";
     var startTime = null;
-    // Get a reference to the database service
-    var database = firebase.database();
-
     gridY = Number(getQueryVariable('gridY'));
     gridX = Number(getQueryVariable('gridX'));
     mode = getQueryVariable('mode');
@@ -278,7 +275,7 @@ var onPageLoad = function() {
         functionString = "algorithm" + char;      
         window[functionString](submittedSequence, startTime);
         clearLeaderboard();
-        loadLeaderboard();
+        //loadLeaderboard();
     };
 
     var saveCreatedLetter = function() {
@@ -307,7 +304,7 @@ var onPageLoad = function() {
 
     var loadLeaderboard = function() {
         //Get data from database and display grids
-        firebase.database().ref('/stats/' + char).orderByChild("time").once('value').then(function(snapshot) {
+        firebase.database().ref('/stats/' + char).once('value').then(function(snapshot) {
 
             //Sort the data from the database by time
             var sortedData = [];
