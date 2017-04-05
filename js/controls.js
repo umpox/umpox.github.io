@@ -95,6 +95,10 @@ var onPageLoad = function() {
             saveTxt.setAttribute('visible', true);
             $('#instructionGoal').attr('value', 'Goal: Rearrange the blocks behind you\n to create a letter.');
             $('#instructionPointTwo').attr('value', "2. When you are satisfied with your newly\n created letter, place the red cursor\n over the 'Save' button.");
+            $('#leaderboardTitle').attr('visible', 'false');
+            $('#leaderboardColumns').attr('visible', 'false');
+            $('#leaderboardName').attr('visible', 'false');
+            $('#leaderboardTime').attr('visible', 'false');  
         }
 
         if (height === 5 && width === 7) {
@@ -125,7 +129,12 @@ var onPageLoad = function() {
             $('#instructionGoal').attr('visible', 'false');
             $('#instructionPointOne').attr('visible', 'false');
             $('#instructionPointTwo').attr('visible', 'false');
-            $('#instructionPointThree').attr('visible', 'false');         
+            $('#instructionPointThree').attr('visible', 'false');
+
+            $('#leaderboardTitle').attr('visible', 'false');
+            $('#leaderboardColumns').attr('visible', 'false');
+            $('#leaderboardName').attr('visible', 'false');
+            $('#leaderboardTime').attr('visible', 'false');                  
 
             for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {
                 if (gridState[blockCount] === 1) {
