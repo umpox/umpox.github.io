@@ -277,6 +277,7 @@ var onPageLoad = function() {
 
         functionString = "algorithm" + char;      
         window[functionString](submittedSequence, startTime);
+        clearLeaderboard();
         loadLeaderboard();
     };
 
@@ -298,6 +299,10 @@ var onPageLoad = function() {
         firebase.database().ref('submissions/' + currentTime).set({
             grid: createdSequence
         });
+    };
+
+    var clearLeaderboard = function() {
+        $('#leaderboardName').attr("value", '');
     };
 
     var loadLeaderboard = function() {
