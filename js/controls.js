@@ -301,10 +301,22 @@ var onPageLoad = function() {
 
     var loadLeaderboard = function() {
         //Get data from database and display grids
-        firebase.database().ref('/stats/' + char).once('value').then(function(snapshot) {
-            for (stat in snapshot.val() ){
-                $('#leaderboardName').attr("value", function() { return $(this).attr("value") + stat.split('@')[0] + '\n'; });
-                $('#leaderboardTime').attr("value", function() { return $(this).attr("value") + snapshot.val()[stat].time + '\n'; });                
+        firebase.database().ref('/stats/' + char).orderByChild("time").once('value').then(function(snapshot) {
+
+            var sortedData = [];
+            for (var stat in snapshot.val() ) {
+                sortedData.push([stat, snapshot.val()[stat].time]);
+            }
+
+            sortedData.sort(function(a, b) {
+                return a[1] - b[1];
+            });
+            console.log(sortedData[0][0].split('@')[0]);
+            console.log(sortedData[0][1]);
+
+           for (var data in sortedData){
+                $('#leaderboardName').attr("value", function() { return $(this).attr("value") + sortedData[data][0].split('@')[0] + '\n'; });
+                $('#leaderboardTime').attr("value", function() { return $(this).attr("value") + sortedData[data][1] + '\n'; });                
             }
         });
 
