@@ -275,7 +275,7 @@ var onPageLoad = function() {
         functionString = "algorithm" + char;      
         window[functionString](submittedSequence, startTime);
         clearLeaderboard();
-        //loadLeaderboard();
+        loadLeaderboard();
     };
 
     var saveCreatedLetter = function() {
@@ -300,6 +300,7 @@ var onPageLoad = function() {
 
     var clearLeaderboard = function() {
         $('#leaderboardName').attr("value", '');
+        $('#leaderboardTime').attr("value", '');        
     };
 
     var loadLeaderboard = function() {
