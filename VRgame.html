@@ -1,5 +1,18 @@
 <html>
   <head>
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA4dIiNSRhnrxbjAVEt-nA3mIS10XYiCAI",
+            authDomain: "tyblocks-71854.firebaseapp.com",
+            databaseURL: "https://tyblocks-71854.firebaseio.com",
+            projectId: "tyblocks-71854",
+            storageBucket: "tyblocks-71854.appspot.com",
+            messagingSenderId: "510908265922"
+        };
+        firebase.initializeApp(config);         
+    </script>
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="webvr-polyfill.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
@@ -14,19 +27,6 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-90669016-2', 'auto');
     ga('send', 'pageview');
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyA4dIiNSRhnrxbjAVEt-nA3mIS10XYiCAI",
-            authDomain: "tyblocks-71854.firebaseapp.com",
-            databaseURL: "https://tyblocks-71854.firebaseio.com",
-            projectId: "tyblocks-71854",
-            storageBucket: "tyblocks-71854.appspot.com",
-            messagingSenderId: "510908265922"
-        };
-        firebase.initializeApp(config);         
     </script>
   </head>
     <body>
