@@ -325,7 +325,7 @@ var onPageLoad = function() {
 
     };
 
-    loadLeaderboard();
+    //loadLeaderboard();
 
     var playAgain = function() {
         //Hide success area
