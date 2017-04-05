@@ -277,6 +277,7 @@ var onPageLoad = function() {
 
         functionString = "algorithm" + char;      
         window[functionString](submittedSequence, startTime);
+        loadLeaderboard();
     };
 
     var saveCreatedLetter = function() {
@@ -303,6 +304,7 @@ var onPageLoad = function() {
         //Get data from database and display grids
         firebase.database().ref('/stats/' + char).orderByChild("time").once('value').then(function(snapshot) {
 
+            //Sort the data from the database by time
             var sortedData = [];
             for (var stat in snapshot.val() ) {
                 sortedData.push([stat, snapshot.val()[stat].time]);
@@ -311,10 +313,9 @@ var onPageLoad = function() {
             sortedData.sort(function(a, b) {
                 return a[1] - b[1];
             });
-            console.log(sortedData[0][0].split('@')[0]);
-            console.log(sortedData[0][1]);
 
-           for (var data in sortedData){
+            //Print data to leaderboard
+            for (var data in sortedData){
                 $('#leaderboardName').attr("value", function() { return $(this).attr("value") + sortedData[data][0].split('@')[0] + '\n'; });
                 $('#leaderboardTime').attr("value", function() { return $(this).attr("value") + sortedData[data][1] + '\n'; });                
             }
