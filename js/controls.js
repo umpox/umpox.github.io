@@ -190,7 +190,13 @@ var onPageLoad = function() {
     };
 
     var moveBlock = function(currentBlock) {
-        //Start the timer
+        //First check that the current block has 'clickable'
+        //Used for bugs in FireFox and Safari
+        if (!currentBlock.target.classList.contains('clickable')) {
+            return;
+        }
+
+        //Start the timer if it is not already started
         if (startTime === null) {
             startTime = new Date();
         }
@@ -226,19 +232,23 @@ var onPageLoad = function() {
         y_cord = currentBlock.getAttribute('y');
         x_cord = currentBlock.getAttribute('x');  
 
+        nearbyBlocks = {};
+
         //Calculate the nearby blocks based on HTML coordinates
-        if (y_cord !== max_y) {
+        if (y_cord !== max_y && y_cord !== 5) {
             nearbyBlocks.aboveBox = document.querySelectorAll('[y="' + ( parseInt(y_cord)+1 ) + '"][x="' + x_cord + '"]');
         }
-        if (y_cord !== min_y) {
+        if (y_cord !== min_y && y_cord !== 1) {
             nearbyBlocks.belowBox = document.querySelectorAll('[y="' + ( parseInt(y_cord) - 1 ) + '"][x="' + x_cord + '"]');
         }   
-        if (x_cord !== min_x) {
+        if (x_cord !== min_x && x_cord !== 1) {
             nearbyBlocks.rightBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) - 1 ) + '"]');
         }
-        if (x_cord !== max_x) {
+        if (x_cord !== max_x && x_cord !== 5) {
             nearbyBlocks.leftBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) + 1 ) + '"]');
         }
+
+        console.log(nearbyBlocks);
 
         highlightBlocks(nearbyBlocks, true);                   
      };
@@ -246,7 +256,6 @@ var onPageLoad = function() {
     var highlightBlocks =  function(nearbyBlocks, status) {
         //If status == true highlight blocks, if false unhighlight blocks   
         for (var block in nearbyBlocks){
-
             if (status === true) {
                 nearbyBlocks[block][0].classList.add('clickable');
                 nearbyBlocks[block][0].innerHTML = '<a-animation dur="500" attribute="scale" direction="alternate" repeat="indefinite" to="1.15 1.15 1.15"></a-animation>';
@@ -254,7 +263,7 @@ var onPageLoad = function() {
             else {
                 nearbyBlocks[block][0].classList.remove('clickable');
                 //Slow animation smoothly
-                nearbyBlocks[block][0].innerHTML = '<a-animation dur="50" attribute="scale" direction="normal" repeat="0" to="1 1 1"></a-animation>';               
+                nearbyBlocks[block][0].innerHTML = '<a-animation dur="50" attribute="scale" direction="normal" repeat="0" to="1 1 1"></a-animation>'; 
             }
 
             //Change the colour of the empty block to the colour of the moved block
@@ -264,6 +273,8 @@ var onPageLoad = function() {
                 nearbyBlocks[block][0].removeAttribute("empty");
             }
         }  
+
+        nearbyBlocks = {};
         reCursor();
     };
 
