@@ -248,8 +248,6 @@ var onPageLoad = function() {
             nearbyBlocks.leftBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) + 1 ) + '"]');
         }
 
-        console.log(nearbyBlocks);
-
         highlightBlocks(nearbyBlocks, true);                   
      };
 
