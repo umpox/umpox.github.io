@@ -45,6 +45,7 @@ var navigateGrids = function() {
     $("#mainMenu").hide(); 
     $("#grids").show();
     $("#adminLogin").hide();
+    $("#logoutBtn").hide();
 };
 
 var navigateMenu = function() {
