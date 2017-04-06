@@ -353,6 +353,9 @@ var onPageLoad = function() {
         $('#success').attr('visible', 'false');
         $('#successTitle').attr('visible', 'false');
         $('#successText').attr('visible', 'false');
+        $('#successStatsTitle').attr('visible', 'false');
+        $('#successStatsTime').attr('visible', 'false');
+        $('#successStatsMoves').attr('visible', 'false');        
         $('#playAgainBtn').attr('visible', 'false');
         $('#playAgainTxt').attr('visible', 'false');
         $('#socialBtn').attr('visible', 'false');
