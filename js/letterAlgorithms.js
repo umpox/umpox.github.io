@@ -600,5 +600,5 @@ var submitStatsToDb = function(oldTime, char) {
     });
 
     //Update stats page with total time
-    $('#successStatsTime').attr('value', 'Time:' + seconds);
+    $('#successStatsTime').attr('value', 'Time: ' + seconds);
 };
