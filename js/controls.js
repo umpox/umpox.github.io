@@ -1,8 +1,9 @@
 $(document).ready(function(){
+    //Call the main code on page load
     onPageLoad();
 });
 
-//Function used to grab data from the URL
+//Function used through the program to grab data from the URL
 var getQueryVariable = function(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
@@ -14,11 +15,19 @@ var getQueryVariable = function(variable) {
 };
 
 var onPageLoad = function() {
+    //Save all blocks in the puzzle in box variable
     var box = document.getElementsByClassName('tyBlock');
+
+    //Default values for grid blocks
+    //Sets grey block as the top left block
+    //Sets default grid size as 5x5
     var y_cord, x_cord = 1;
     var max_x = '5', max_y = '5';
     var min_x = '1', min_y = '1';
-    var aboveBox, belowBox, leftBox, rightBox;
+    var gridY = 5;
+    var gridX = 5;
+
+    //Save A-Frame elements as variables to use throughout code 
     var cursor = document.getElementById('cursor');
     var camera = document.getElementById('3DCam');
     var submitBtn = document.getElementById('submitBtn');
@@ -32,20 +41,25 @@ var onPageLoad = function() {
     var leaderboardSpace = document.getElementById('leaderboard');
     var instructionSpace = document.getElementById('instructions');
     var successArea = document.getElementById('success');
+
+    //Variables to store data about blocks on the grid
     var nearbyBlocks = {};
+    var totalBlocks;
+    var aboveBox, belowBox, leftBox, rightBox;
     var currentBlockColor;
     var currentBlockStatus;
+
+    //Variables to store data about the state of the game
     var char;
-    var totalBlocks;
-    var gridY = 5;
-    var gridX = 5;
     var mode = 'normal';
     var gridState = "";
     var startTime = null;
     
+    //Initalise variables from URL to set game state
     gridY = Number(getQueryVariable('gridY'));
     gridX = Number(getQueryVariable('gridX'));
     mode = getQueryVariable('mode');
+    //Grid state used to read in a grid state from the URL - used for admin mode
     gridState = JSON.parse("[" + getQueryVariable('gridState') + "]");
 
     var reCursor = function() {
@@ -55,6 +69,8 @@ var onPageLoad = function() {
         cursor.setAttribute('raycaster', 'objects: .clickable, .submitClick');
     };
 
+    //Function used to generate a random array of a defined length
+    //Used to generate a random grid
     var generateRandomArray = function(length, totalBlocks) {
         var arr = [];
         while(arr.length < length){
@@ -68,25 +84,51 @@ var onPageLoad = function() {
         return arr;
     };
 
+    //Function generates the grid
     var generateBlocks = function(height, width) {
+
+        /*
+        Use height and width parameters to calculate
+        number of blocks needed
+        */
         totalBlocks = height * width;
         var y = height;
         var x = width;
 
+        //Variables used to store the positioning of the block
         var verticalDistance = -0.7;
         var originalVerticalDistance = -0.7;
-
         var horizontalDistance = 2.4;
         var originalHorizontalDistance = 2.4;
 
-        var emptyBlockNum = parseInt( Math.random() * totalBlocks );
+        //Variables used to differentiate between empty blocks and black boxs
         var attributeEmpty = true;
         var attributeActive = false;
-        var activeBlockNum = 11;
 
-        //Generate random array of 11 numbers to assign to the black boxes
+        /*
+        Generate random array of 11 numbers to assign to 
+        the black blocks in the grid
+        */
         var randomActiveBlocks = generateRandomArray(11, totalBlocks);
 
+        //If the grid is 5x7 then adjust the UI to recenter the blocks
+        if (height === 5 && width === 7) {
+            max_x = '7';
+            max_y = '5';
+            originalVerticalDistance = -1.05;
+            verticalDistance = originalVerticalDistance;
+        }
+        //If the grid is 10x10 then adjust the UI to recenter the blocks
+        else if (height === 10 && width === 10) {
+            max_x = '10';
+            max_y = '10';
+            originalVerticalDistance = -1.57;
+            verticalDistance = originalVerticalDistance;
+            originalHorizontalDistance = 3.4;
+            horizontalDistance = originalHorizontalDistance;
+        }
+
+        //If in normal mode then adjust the user interface
         if (mode === 'normal') {
             letterImage.setAttribute('visible', false);
             leaderboardSpace.setAttribute('visible', false);
@@ -102,21 +144,7 @@ var onPageLoad = function() {
             $('#leaderboardTime').attr('visible', 'false');  
         }
 
-        if (height === 5 && width === 7) {
-            max_x = '7';
-            max_y = '5';
-            originalVerticalDistance = -1.05;
-            verticalDistance = originalVerticalDistance;
-        }
-        else if (height === 10 && width === 10) {
-            max_x = '10';
-            max_y = '10';
-            originalVerticalDistance = -1.57;
-            verticalDistance = originalVerticalDistance;
-            originalHorizontalDistance = 3.4;
-            horizontalDistance = originalHorizontalDistance;
-        }
-
+        //If in admin mode then adjust the user interface
         if (mode === 'admin' && gridState.length > 0) {
             letterImage.setAttribute('visible', false);
             leaderboardSpace.setAttribute('visible', false);
@@ -137,14 +165,22 @@ var onPageLoad = function() {
             $('#leaderboardName').attr('visible', 'false');
             $('#leaderboardTime').attr('visible', 'false');                  
 
+            //Loop through the provided grid and display on the canvas
             for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {
+                //If the array provides a [1], paint a black block
                 if (gridState[blockCount] === 1) {
                     $('#grid').append('<a-box position="' + verticalDistance + ' ' + horizontalDistance  + ' -1.5"  rotation="0" width="0.3" height="0.3" depth="0.05" color="#1c1c1f"></a-box>');
                 }
+                //Else paint a white block
                 else {
                     $('#grid').append('<a-box position="' + verticalDistance + ' ' + horizontalDistance  + ' -1.5"  rotation="0" width="0.3" height="0.3" depth="0.05" color="#dfe0e6"></a-box>');                   
                 }
 
+                /*
+                If the grid reaches the end of a row,
+                move to the next line of the grid and,
+                restart on the first block in X coord
+                */ 
                 if (x === 1) {
                     x = width;
                     y = y-1;
@@ -156,20 +192,41 @@ var onPageLoad = function() {
                     verticalDistance = parseFloat( (verticalDistance + 0.35).toFixed(2) );
                 }
             }        
+            
+            //Hide cursor as not needed in admin mode
             cursor.setAttribute('visible', 'false');
             camera.setAttribute('rotation', '0');
+
+            //End program execution
             return;
         }
+        /* END OF ADMIN MODE CODE */
 
+
+        //Loop through until totalBlocks number is met
         for (var blockCount = 0; blockCount < totalBlocks; blockCount++) {
+
+            /*
+            If current blocknumber is specified to be black
+            in the randomly generated array, set the attribute
+            'active' of the element to true
+            */
             if($.inArray(blockCount, randomActiveBlocks) > -1) {
                 attributeActive = true;
             }
 
+            //Add a block element to the grid
             $('#grid').append('<a-box class="tyBlock" active="' + attributeActive + '" empty="' + attributeEmpty + '" y="' + y + '" x="' + x + '" position="' + verticalDistance + ' ' + horizontalDistance  + ' -1.5" rotation="0" width="0.3" height="0.3" depth="0.05"></a-box>');
+            
+            //Reset values for next iteration
             attributeEmpty = false;
             attributeActive = false;   
 
+            /*
+            If the grid reaches the end of a row,
+            move to the next line of the grid and,
+            restart on the first block in X coord
+            */             
             if (x === 1) {
                 x = width;
                 y = y-1;
@@ -183,12 +240,15 @@ var onPageLoad = function() {
         } 
 
     };
+    //Immediately generate blocks using grids coords from URL
     generateBlocks(gridY, gridX);
 
+    //Function used to remove all block elements when called
     var removeAllBlocks = function() {
         $('.tyBlock').remove();
     };
 
+    //Function called whenever a flashing block is clicked
     var moveBlock = function(currentBlock) {
         //First check that the current block has 'clickable'
         //Used for bugs in FireFox and Safari
@@ -201,7 +261,7 @@ var onPageLoad = function() {
             startTime = new Date();
         }
         
-        //Increment total moves stat
+        //Increment total moves statistc
         totalMoves++;
 
         //Get current block color used later to change the empty block color
@@ -211,27 +271,44 @@ var onPageLoad = function() {
         //Set the selected block to empty
         this.setAttribute('color', '#88898c');
 
+        //Function to animate nearby blocks that can be clicked
         highlightBlocks(nearbyBlocks, false);
+        //Recalculate nearby blocks using the new empty block
         calculateNearbyBlocks(this);
 
-        /*Set the selected block 'empty' to true,
+        /*
+        Set the selected block 'empty' to true,
         keep this below calculateNearbyBlocks as the empty attribute
-        is used to locate the empty block*/
+        is used to locate the empty block
+        */
         this.setAttribute('empty', 'true');
         this.setAttribute('active', 'false');
     };
 
+    /*
+    Generate a random letter goal for challenge mode
+    */
     var generateLetterAssignment = function() {
         var availableChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         char = availableChars.charAt(Math.floor(Math.random() * availableChars.length));
+
+        //Calculate image path
         document.getElementById("currentLetter").src = "resources/completeLetters/" + char + ".png";
     };
+    //Immediately generate and display the letter for challenge mode
     generateLetterAssignment();
 
+
+    /*
+    Function used to calculate available blocks 
+    that can move into the empty block
+    */
     var calculateNearbyBlocks = function(currentBlock) {
+        //Get current block coordinates
         y_cord = currentBlock.getAttribute('y');
         x_cord = currentBlock.getAttribute('x');  
 
+        //Ensure no nearbyBlocks 
         nearbyBlocks = {};
 
         //Calculate the nearby blocks based on HTML coordinates
@@ -248,10 +325,19 @@ var onPageLoad = function() {
             nearbyBlocks.leftBox = document.querySelectorAll('[y="' + y_cord + '"][x="' + ( parseInt(x_cord) + 1 ) + '"]');
         }
 
+        /*
+        Animate the nearbyblocks so that the user knows 
+        which ones they can interact with
+        */
         highlightBlocks(nearbyBlocks, true);                   
      };
 
+    /*
+    Function to take in an object and 
+    either begin animation or disable animation
+    */
     var highlightBlocks =  function(nearbyBlocks, status) {
+
         //If status == true highlight blocks, if false unhighlight blocks   
         for (var block in nearbyBlocks){
             if (status === true) {
@@ -273,15 +359,21 @@ var onPageLoad = function() {
         }  
 
         nearbyBlocks = {};
+        //Reload cursor
         reCursor();
     };
 
+    //Function to query created letter in challenge mode
     var submitCreatedLetter = function() {
         var submittedSequence = [];
         var functionString;
         var letterFunction;
         var listOfBlocks = document.getElementsByClassName('tyBlock');
 
+        /*Loop through grid and create array, 
+        1 in array = black,
+        0 in array = white or empty
+        */
         for (countedBlocks = 0; countedBlocks < totalBlocks; countedBlocks++) {
             if (listOfBlocks[countedBlocks].getAttribute('active') === 'true') {
                 submittedSequence.push('1');
@@ -291,18 +383,30 @@ var onPageLoad = function() {
             }
         }
 
+        /*
+        Create custom function and call it
+        function are available to view in letterAlgorithms.js
+        Pass in created array to function
+        */
         functionString = "algorithm" + char;      
         window[functionString](submittedSequence, startTime);
+
+        //Reload the leaderboard
         clearLeaderboard();
         loadLeaderboard();
     };
 
+    //Function used to submit a new design for a letter in normal mode
     var saveCreatedLetter = function() {
         var createdSequence  = [];
         var listOfBlocks = document.getElementsByClassName('tyBlock');
         var currentDate = new Date();
         var currentTime = currentDate.getTime().toString();
 
+        /*Loop through grid and create array, 
+        1 in array = black,
+        0 in array = white or empty
+        */        
         for (countedBlocks = 0; countedBlocks < totalBlocks; countedBlocks++) {
             if (listOfBlocks[countedBlocks].getAttribute('active') === 'true') {
                 createdSequence.push('1');
@@ -312,10 +416,16 @@ var onPageLoad = function() {
             }
         }
 
+        //Submit letter array to database path 'submissions'
         firebase.database().ref('submissions/' + currentTime).set({
             grid: createdSequence
         });
 
+        //Change Save button colour for 750ms
+        /*
+        Used to signify to the user that they successfully submited
+        Their design
+        */
         saveBtn.setAttribute('color', 'green');
         saveTxt.setAttribute('value', 'Saved!');
         saveTxt.setAttribute('position', '2.3 1.6 -0.85');
@@ -327,13 +437,16 @@ var onPageLoad = function() {
             }, 750);
     };
 
+    //Function to reset leaderboard values
     var clearLeaderboard = function() {
         $('#leaderboardName').attr("value", '');
         $('#leaderboardTime').attr("value", '');        
     };
 
+    //Function to query database and return leaderboard values
     var loadLeaderboard = function() {
-        //Get data from database and display grids
+
+        //Get stats data from database and display in VR
         firebase.database().ref('/stats/' + char).once('value').then(function(snapshot) {
 
             //Sort the data from the database by time
@@ -353,11 +466,12 @@ var onPageLoad = function() {
             }
         });
     };
-
+    //Immediately load the leaderboard
     loadLeaderboard();
 
-    var playAgain = function() {
 
+    //Function used to regenerate the grid if a user wants to play again
+    var playAgain = function() {
         //Hide success area
         $('#success').attr('visible', 'false');
         $('#successTitle').attr('visible', 'false');
@@ -381,32 +495,42 @@ var onPageLoad = function() {
         onPageLoad();
     };
 
+    //Exit program - defined as return to main menu
     var exitProgram = function() {
         window.location.href = "https://umpox.github.io";
     };
 
+    //Loads a tweet page with a preset tweet
+    //Tweet contains letter in challenge mode and the users time
     var shareToTwitter = function() {
         window.location.href = 'https://twitter.com/intent/tweet?hashtags=TyBlocks&url=umpox.github.io&text=I just completed the letter ' + char + ' with a time of ' + seconds + ' seconds. Check it out at https://umpox.github.io #TyBlocks';
     };
 
-    //SET BLOCK STATES
+    //Code runs after grid has been initialised
+    //Loop through the created blocks in grid
     for (var i = 0; i < box.length; i++) {
-
-        //Add mouse listeners
+        //Add click listeners to all blocks
         box[i].addEventListener('click', moveBlock, false);        
 
+        //If current block is 'empty'
+        //Set colour to grey
+        //Calculate nearbyblocks that can move into empty block
         if ( box[i].getAttribute('empty') === "true" ) {
             box[i].setAttribute('color', '#88898c');
             calculateNearbyBlocks(box[i]);
         }
+        //Else if current block is 'active'
+        //Set colour to black
         else if ( box[i].getAttribute('active') === "true" ) {
             box[i].setAttribute('color', '#1c1c1f');
         }
+        //Else set block colour to white
         else if (box[i].className === 'tyBlock'){
             box[i].setAttribute('color', '#dfe0e6');
         }
     }
 
+    //Add event listeners to buttons in the VR inteface
     submitBtn.addEventListener('click', submitCreatedLetter, false);
     saveBtn.addEventListener('click', saveCreatedLetter, false);
     playAgainBtn.addEventListener('click', playAgain, false);    
