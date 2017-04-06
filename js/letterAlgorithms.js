@@ -1,5 +1,6 @@
 var seconds;
 var user = getQueryVariable('user');
+var totalMoves = 0;
 
 var algorithmA = function(submittedSequence, startTime) {
     var correctSequence = 
@@ -599,6 +600,8 @@ var submitStatsToDb = function(oldTime, char) {
         time: seconds
     });
 
-    //Update stats page with total time
+    //Update stats page with total time and moves
     $('#successStatsTime').attr('value', 'Time: ' + seconds);
+    $('#successStatsMoves').attr('value', 'Moves: ' + totalMoves);
+
 };

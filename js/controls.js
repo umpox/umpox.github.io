@@ -194,6 +194,9 @@ var onPageLoad = function() {
         if (startTime === null) {
             startTime = new Date();
         }
+        
+        //Increment total moves stat
+        totalMoves++;
 
         //Get current block color used later to change the empty block color
         currentBlockColor = this.getAttribute("color");
