@@ -2,7 +2,6 @@ $(document).ready(function(){
     onPageLoad();
 });
 
-
 //Function used to grab data from the URL
 var getQueryVariable = function(variable) {
     var query = window.location.search.substring(1);
@@ -31,6 +30,7 @@ var onPageLoad = function() {
     var socialBtn = document.getElementById('socialBtn');
     var letterImage = document.getElementById('letter');
     var leaderboardSpace = document.getElementById('leaderboard');
+    var instructionSpace = document.getElementById('instructions');
     var successArea = document.getElementById('success');
     var nearbyBlocks = {};
     var currentBlockColor;
@@ -42,13 +42,14 @@ var onPageLoad = function() {
     var mode = 'normal';
     var gridState = "";
     var startTime = null;
+    
     gridY = Number(getQueryVariable('gridY'));
     gridX = Number(getQueryVariable('gridX'));
     mode = getQueryVariable('mode');
     gridState = JSON.parse("[" + getQueryVariable('gridState') + "]");
 
     var reCursor = function() {
-        //Hacky fix for A-Frames cursor problem
+        //Fix for A-Frames cursor problem
         //Recreates the cursor to update click handlers
         cursor.removeAttribute('raycaster');
         cursor.setAttribute('raycaster', 'objects: .clickable, .submitClick');
@@ -122,7 +123,7 @@ var onPageLoad = function() {
             submitBtn.setAttribute('visible', false);
             submitTxt.setAttribute('visible', false);
             saveBtn.setAttribute('visible', false);
-            saveTxt.setAttribute('visible', false);  
+            saveTxt.setAttribute('visible', false); 
 
             $('#instructions').attr('visible', 'false');
             $('#instructionTitle').attr('visible', 'false');
@@ -182,13 +183,10 @@ var onPageLoad = function() {
         } 
 
     };
-
     generateBlocks(gridY, gridX);
 
     var removeAllBlocks = function() {
-        while (box[0]) {
-            box[0].parentNode.removeChild(box[0]);
-        }
+        $('.tyBlock').remove();
     };
 
     var moveBlock = function(currentBlock) {
@@ -305,6 +303,16 @@ var onPageLoad = function() {
         firebase.database().ref('submissions/' + currentTime).set({
             grid: createdSequence
         });
+
+        saveBtn.setAttribute('color', 'green');
+        saveTxt.setAttribute('value', 'Saved!');
+        saveTxt.setAttribute('position', '2.3 1.6 -0.85');
+        setTimeout(
+            function(){
+                saveBtn.setAttribute('color', 'white');
+                saveTxt.setAttribute('value', 'Save');
+                saveTxt.setAttribute('position', '2.3 1.6 -0.70');
+            }, 750);
     };
 
     var clearLeaderboard = function() {
@@ -332,12 +340,12 @@ var onPageLoad = function() {
                 $('#leaderboardTime').attr("value", function() { return $(this).attr("value") + sortedData[data][1] + '\n'; });                
             }
         });
-
     };
 
     loadLeaderboard();
 
     var playAgain = function() {
+
         //Hide success area
         $('#success').attr('visible', 'false');
         $('#successTitle').attr('visible', 'false');
@@ -382,7 +390,6 @@ var onPageLoad = function() {
         else if (box[i].className === 'tyBlock'){
             box[i].setAttribute('color', '#dfe0e6');
         }
-        
     }
 
     submitBtn.addEventListener('click', submitCreatedLetter, false);
@@ -390,7 +397,4 @@ var onPageLoad = function() {
     playAgainBtn.addEventListener('click', playAgain, false);    
     exitBtn.addEventListener('click', exitProgram, false);
     socialBtn.addEventListener('click', shareToTwitter, false);
-    //Set final colours of certain elements
 };
-
-
