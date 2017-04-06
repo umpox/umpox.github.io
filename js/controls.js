@@ -491,9 +491,10 @@ var onPageLoad = function() {
         //Rescramble blocks     
         removeAllBlocks(); 
 
-        //Rerun the entire script  
+        //Rerun the entire script 
         onPageLoad();
-        generateLetterAssignment();
+        letterImage.setAttribute('src', '');
+        letterImage.setAttribute('src', '#currentLetter');
     };
 
     //Exit program - defined as return to main menu
