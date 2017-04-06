@@ -1,5 +1,6 @@
 <html>
     <head>
+        <!-- Load Firebase library -->
         <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
         <script>
             // Initialize Firebase
@@ -13,28 +14,36 @@
             };
             firebase.initializeApp(config);         
         </script>
+        <!-- Load Bootstrap library -->
         <link 
             rel="stylesheet" 
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
             integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
             crossorigin="anonymous">
+        <!-- Used to increase usability on mobile -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <!-- Load jQuery library -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
             crossorigin="anonymous"></script>
+        
+        <!-- Load custon CSS and JS -->
         <link rel="stylesheet" type="text/css" href="css/menu.css">
         <script src="js/menuLogic.js"></script>
-        <meta name="viewport" content="width=device-width, user-scalable=no">
+
     </head>
+
     <body>
         <div class="container-fluid" id="appBlock">
             <div class="row" id="menuOptions">
                 <div class="col-xs-12 menuContainer">
 
+                    <!-- Logo container -->
                     <div id="mainLogo" onclick="navigateMenu()">
                         <img src="resources/logo2.png"></img>
                     </div>
 
+                    <!-- Main menu -->
                     <div id="mainMenu">
                         <button id="mainMenu-loginBtn" type="button" onclick="navigateLogin()" class="menuBtn btn btn-primary btn-lg btn-block">
                             Login
@@ -47,6 +56,7 @@
                         </button>                         
                     </div>
 
+                    <!-- Login menu -->
                     <div id="mainMenu-loginMenu" style="display: none">
 
                         <div id="googleButton" onclick="loginUserGoogle()">                                                                     <!---added google btn-->
@@ -76,6 +86,7 @@
                         <span id="loginError"></span>                                        
                     </div>
 
+                    <!-- Register menu -->
                     <div id="mainMenu-registerMenu" style="display: none">
                         <div class="form-group row mainMenu-input">
                             <input id="registerEmail" type="email" class="form-control" placeholder="Enter email"> 
@@ -96,6 +107,7 @@
                         <span id="registerSuccess"></span>                   
                     </div>  
                     
+                    <!-- Forgot password menu -->
                     <div id="mainMenu-accountRecovery" style="display: none">                                                   <!-- added account recovery menu element-->
                         <div class="form-group row mainMenu-input">
                             <input id="accountRecovery-email" type="email" class="form-control" placeholder="Enter your email">
@@ -110,16 +122,7 @@
                         </div>                        
                     </div>
 
-                    <!--div id="controls" style="display: none">
-                        <button onclick="navigateModes()" id="controls-VR" type="button" class="menuBtn btn btn-primary btn-lg btn-block">
-                            VR
-                        </button>  
-
-                        <button onclick="navigateModes()" id="controls-2D" type="button" class="menuBtn btn btn-default btn-lg btn-block">
-                            2D
-                        </button>                                       
-                    </div-->
-
+                    <!-- Game mode menu -->
                     <div id="modes" style="display: none">
                         <button onclick="navigateGrids()" id="mode-Normal" type="button" class="menuBtn btn btn-primary btn-lg btn-block">
                             Normal
@@ -130,6 +133,7 @@
                         </button>                                              
                     </div>
 
+                    <!-- Grid menu -->
                     <div id="grids" style="display: none">
                         <h2 id="gridsTitle">Choose your grid size:</h2>
                         <img onclick="loadGame(5, 5, 'normal')" src="resources/grid5x5.png">
@@ -137,12 +141,14 @@
                         <img onclick="loadGame(10, 10, 'normal')" src="resources/grid10x10.png" >                                          
                     </div>
 
+                    <!-- Admin results area -->
                     <div id="admin-Results" style="display: none">
                         <h2 id="adminTitle">Submitted Grids:</h2>
                         <div id="adminSpace">
                         </div>                                       
                     </div>
 
+                    <!-- Admin login menu -->
                     <div id="adminMenu-loginMenu" style="display: none">
 
                         <div class="form-group row mainMenu-input">
@@ -161,18 +167,19 @@
                     </div>
                 </div>
 
+                <!-- User logout button -->
                 <div class="col-xs-12 signOutBtn">
                     <button id="logoutBtn" type="button" onclick="signOut()" style="display:none" class="btn btn-default btn-lg btn-block">
                         Logout
                     </button>                      
                 </div>
 
+                <!-- Admin login button -->
                 <div class="col-xs-12" id="adminLogin">
                     <button id="adminBtn" type="button" onclick="navigateAdmin()" class="btn btn-default btn-lg btn-block">
                         Admin Login
                     </button>                      
                 </div>
-            
 
             </div>
         </div>
