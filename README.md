@@ -5,9 +5,6 @@ https://umpox.github.io
 
 ## System Requirements
 ### Desktop
-- Minimum CPU Speed: 1.6GHz
-- Minimum RAM: 2GB
-#### Browsers
 -	Edge 12+
 -	Firefox 45+
 -	Chrome 49+
@@ -20,5 +17,4 @@ https://umpox.github.io
 ### Android
 -	Samsung S6 or above
 -	Android browser 53+
-
 
