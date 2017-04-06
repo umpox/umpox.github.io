@@ -1,3 +1,10 @@
+/*
+This code has specific grid arrays in each function,
+controls.js queries these functions when a user attempts
+to solve a grid in challenge mode.
+DO NOT EDIT OR DELETE
+*/
+
 var seconds;
 var user = getQueryVariable('user');
 var totalMoves = 0;
@@ -12,11 +19,13 @@ var algorithmA = function(submittedSequence, startTime) {
         1,0,0,0,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'A');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -34,11 +43,13 @@ var algorithmB = function(submittedSequence, startTime) {
         1,0,1,0,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'B');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -56,11 +67,13 @@ var algorithmC = function(submittedSequence, startTime) {
         0,1,1,1,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'C');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -78,11 +91,13 @@ var algorithmD = function(submittedSequence, startTime) {
         1,0,1,0,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'D');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -100,11 +115,13 @@ var algorithmE = function(submittedSequence, startTime) {
         0,1,1,1,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'E');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -122,11 +139,13 @@ var algorithmF = function(submittedSequence, startTime) {
         1,0,0,0,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'F');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -144,11 +163,13 @@ var algorithmG = function(submittedSequence, startTime) {
         0,1,1,0,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'G');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -166,11 +187,13 @@ var algorithmH = function(submittedSequence, startTime) {
         1,0,0,0,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'H');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -188,11 +211,13 @@ var algorithmI = function(submittedSequence, startTime) {
         1,1,1,1,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'I');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -210,11 +235,13 @@ var algorithmJ = function(submittedSequence, startTime) {
         0,1,1,0,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'J');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -232,11 +259,13 @@ var algorithmK = function(submittedSequence, startTime) {
         1,0,0,0,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'K');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -254,11 +283,13 @@ var algorithmL = function(submittedSequence, startTime) {
         0,1,1,1,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'L');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -276,11 +307,13 @@ var algorithmM = function(submittedSequence, startTime) {
         1,0,0,0,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'M');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -298,11 +331,13 @@ var algorithmN = function(submittedSequence, startTime) {
         1,0,0,0,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'N');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -320,11 +355,13 @@ var algorithmO = function(submittedSequence, startTime) {
         0,1,1,1,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'O');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -342,11 +379,13 @@ var algorithmP = function(submittedSequence, startTime) {
         1,0,0,0,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'P');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -364,11 +403,13 @@ var algorithmQ = function(submittedSequence, startTime) {
         0,0,0,0,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'Q');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -386,11 +427,13 @@ var algorithmR = function(submittedSequence, startTime) {
         1,0,0,0,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'R');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -408,11 +451,13 @@ var algorithmS = function(submittedSequence, startTime) {
         0,1,1,1,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'S');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -430,11 +475,13 @@ var algorithmT = function(submittedSequence, startTime) {
         0,0,1,0,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'T');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -452,11 +499,13 @@ var algorithmU = function(submittedSequence, startTime) {
         0,1,1,1,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'U');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -474,11 +523,13 @@ var algorithmV = function(submittedSequence, startTime) {
         0,0,1,0,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'V');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -496,11 +547,13 @@ var algorithmW = function(submittedSequence, startTime) {
         0,1,0,1,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'W');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -518,11 +571,13 @@ var algorithmX = function(submittedSequence, startTime) {
         1,0,0,0,1,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'X');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -540,11 +595,13 @@ var algorithmY = function(submittedSequence, startTime) {
         1,1,1,0,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'Y');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -562,11 +619,13 @@ var algorithmZ = function(submittedSequence, startTime) {
         1,1,1,1,0,
     ];
 
+    //If the submitted grid is correct
     if ( submittedSequence.join() === correctSequence.join() )
     {
         showSuccessArea();
         submitStatsToDb(startTime, 'Z');
     }
+    //Else signal to the user that they were wrong
     else 
     {
          submitBtn.setAttribute('color', 'red');
@@ -574,6 +633,7 @@ var algorithmZ = function(submittedSequence, startTime) {
     }
 };
 
+//Display success area in VR
 var showSuccessArea = function() {
     $('#success').attr('visible', 'true');
     $('#successTitle').attr('visible', 'true');
@@ -592,10 +652,15 @@ var showSuccessArea = function() {
 };
 
 var submitStatsToDb = function(oldTime, char) {
+    //Get current UNIX time
     var newTime = new Date();
 
+    //Calculate difference in seconds between:
+    //Time the user began the puzzle
+    //And time that the user finished
     seconds = (newTime.getTime() - oldTime.getTime()) / 1000;
 
+    //Push total time to database using the current challenge letter and the username
     firebase.database().ref('stats/' + char + '/' + user + '@' + Math.round(newTime/1000)).set({
         time: seconds
     });
@@ -603,5 +668,4 @@ var submitStatsToDb = function(oldTime, char) {
     //Update stats page with total time and moves
     $('#successStatsTime').attr('value', 'Time: ' + seconds);
     $('#successStatsMoves').attr('value', 'Moves: ' + totalMoves);
-
 };
