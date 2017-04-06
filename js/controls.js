@@ -493,6 +493,7 @@ var onPageLoad = function() {
 
         //Rerun the entire script  
         onPageLoad();
+        generateLetterAssignment();
     };
 
     //Exit program - defined as return to main menu
