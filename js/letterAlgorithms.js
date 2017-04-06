@@ -577,6 +577,9 @@ var showSuccessArea = function() {
     $('#success').attr('visible', 'true');
     $('#successTitle').attr('visible', 'true');
     $('#successText').attr('visible', 'true');
+    $('#successStatsTitle').attr('visible', 'true');
+    $('#successStatsTime').attr('visible', 'true');
+    $('#successStatsMoves').attr('visible', 'true');
     $('#playAgainBtn').attr('visible', 'true');
     $('#playAgainTxt').attr('visible', 'true');
     $('#socialBtn').attr('visible', 'true');
@@ -595,4 +598,7 @@ var submitStatsToDb = function(oldTime, char) {
     firebase.database().ref('stats/' + char + '/' + user + '@' + Math.round(newTime/1000)).set({
         time: seconds
     });
+
+    //Update stats page with total time
+    $('#successStatsTime').attr('value', 'Time:' + seconds);
 };
