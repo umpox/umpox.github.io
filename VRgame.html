@@ -1,5 +1,6 @@
 <html>
   <head>
+    <!-- Load Firebase library -->
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
     <script>
     // Initialize Firebase
@@ -13,13 +14,20 @@
     };
     firebase.initializeApp(config);
     </script>
+    <!-- Load A-Frame library -->
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <!-- Load WebVR PolyFill library -->
     <script src="webvr-polyfill.js"></script>
+    <!-- Load jQuery library -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" 
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
         crossorigin="anonymous"></script>
+
+     <!-- Load custom JS scripts -->
     <script src="js/controls.js"></script>
     <script src="js/letterAlgorithms.js"></script>
+
+    <!-- Initialise Google analytics -->
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -28,10 +36,13 @@
     ga('create', 'UA-90669016-2', 'auto');
     ga('send', 'pageview');
     </script>
+
   </head>
     <body>
         <a-scene id="grid" vr-mode-ui="enabled: true">
+            <!-- Camera component -->
             <a-camera id="3DCam" wasd-controls-enabled="false" look-controls-enabled="true" rotation="0 180">
+                <!-- Cursor component -->
                 <a-entity id="cursor"
                         position="0 0 -1.4"
                         geometry="primitive: ring; radiusOuter: 0.03; radiusInner: 0.02;"
@@ -41,6 +52,7 @@
                 </a-entity>
             </a-camera>
 
+            <!-- Asset Management System -->
             <a-assets timeout="100">
                 <img id="currentLetter" src="">
                 <img id="360image" src="https://c3.staticflickr.com/2/1475/26239222850_cabde81c39_k.jpg">
@@ -91,8 +103,6 @@
             <a-text id="saveTxt" visible="false" value="Save" color="#000" position="2.3 1.6 -0.70" rotation="0 270"></a-text>
 
         <a-sky src="https://c1.staticflickr.com/3/2819/33501805146_916629f86e_k.jpg" rotation="0 7 0"></a-sky>
-        <!--a-sky color="#6EBAA7"></a-sky-->
-
         </a-scene>
     </body>
 </html>
