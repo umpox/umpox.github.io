@@ -74,6 +74,9 @@ var navigateMenu = function() {
     $("#logoutBtn").hide();
     $("#adminLogin").show();
     $("#adminMenu-loginMenu").hide();
+    $("#admin-Results").hide();
+    $("#mainLogo").show();
+    $("#grids").hide();
 };
 
 //Open controls page

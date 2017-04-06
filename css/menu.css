@@ -50,6 +50,12 @@ html {
     width: 50%;
 }
 
+#adminMenu-backBtn,
+#gridMenu-backBtn {
+    width: 50%;
+    margin-top: 10px;
+}
+
 #mainLogo img {
     width: 25%;
     max-width: 100px;
@@ -122,7 +128,8 @@ html {
         display: inline-block;
     }
 
-    #mainMenu-navButtons #mainMenu-backBtn {
+    #mainMenu-navButtons #mainMenu-backBtn
+     {
         float: left;
         margin-right: 4%;
     }
