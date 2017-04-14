@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+#appContainer {
+    min-height: 100%;
+}
+#menuBanner {
+    background: #223145;
+    color: white;
+    text-align: center;
+}
+#contentArea {
+    min-height: 76vh;
+}
+.appButtons {
+    background: #223145;
+    height: 75px;
+    text-align: center;
+    color: white;
+    line-height: 75px;
+}
+.appButtons:first-child {
+    border-right: 0.5px solid white;
+}
