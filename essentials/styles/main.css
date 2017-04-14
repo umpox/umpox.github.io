@@ -3,6 +3,7 @@
 }
 html, body {
     height: 100%;
+    background: #223145;
 }
 #appContainer {
     min-height: 100%;
@@ -14,6 +15,19 @@ html, body {
 }
 #contentArea {
     min-height: 76vh;
+    background: #596371;
+}
+#contentArea .newsItem {
+    border: 2px solid #596371;
+    white-space: pre-line;
+    text-align: left;
+}
+.newsItem .newsItem-title {
+    font-weight: bold;
+}
+.appMenu {
+    position: fixed;
+    top: 88.5vh;
 }
 .appButtons {
     background: #223145;
@@ -23,5 +37,11 @@ html, body {
     line-height: 75px;
 }
 .appButtons:first-child {
-    border-right: 0.5px solid white;
+    border-right: 1px solid white;
+}
+.loading {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%); 
 }

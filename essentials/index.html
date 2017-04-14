@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--Script async to increase loadiong speed- see http://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup-->
+    <script type='text/javascript' src='scripts/appLogic.js'></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,15 +13,20 @@
   <!-- TODO add manifest here -->
 </head>
 <body>
+    <div class="loading">
+        <img src="resources/loading.svg">
+    </div>
+
     <div class="pure-g" id="appContainer">
+
         <div class="pure-u-5-5" id="menuBanner">
             <h1>News</h1>
         </div>
 
         <div class="pure-u-5-5" id="contentArea">
-            <h1>Data</h1>
+
         </div>
-        
+
         <div class="pure-menu-horizontal appMenu">
             <div class="pure-u-12-24 appButtons">
                 <h2>News</h2>
@@ -29,4 +36,6 @@
             </div>
         </div>
     </div>
+
+
 </body>
