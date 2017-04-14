@@ -1,8 +1,3 @@
-//http://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup-->
-document.addEventListener("DOMContentLoaded", function() { 
-    main();
-});
-
 var apiCall = function() {
     this.get = function(apiURL, apiCallbackFunc) {
         var apiRequest = new XMLHttpRequest();
@@ -18,33 +13,9 @@ var apiCall = function() {
     };
 };
 
-var apiReturn = function() {
-    this.post = function(apiURL, apiCallbackFunc) {
-        fetch("https://acceleratedmobilepageurl.googleapis.com/v1/ampUrls:batchGet", {
-            method: "post",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: {
-                "urls":
-                [
-                    "http://www.bbc.co.uk/news/world-asia-39598046"
-                ]
-            }
-        })
-        .then( function(response) {
-            console.log(response);
-        });
-    };
-
-};
-var postRequest = new apiReturn();
-postRequest.post();
-
 var main = function() {
     //URL to load news data
-    var apiURL = 'https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=21656de15c824bcdad147b54933b981e';
+    var apiURL = 'https://content.guardianapis.com/world?show-fields=body,trailText&api-key=ac6c039d-e505-4c5e-ad69-0f7b1a29f98c';
 
     //DOM element to display news data
     var contentArea = document.getElementById('contentArea');
@@ -56,25 +27,35 @@ var main = function() {
 
     //Make attempt to load URL data
     var client = new apiCall();
-    client.get('https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=21656de15c824bcdad147b54933b981e', function(response) {
+    client.get(apiURL, function(newsData) {
         //Successfully loaded
+        //Hide loading icon
+        document.getElementById('loading').classList.add('hidden');
+
         //Convert string to JSON
-        response = JSON.parse(response);
-        var news = response.articles;
+        newsData = JSON.parse(newsData);
+        var news = newsData.response.results;
+
         //Only read the articles part of the JSON
         for (var article in news) {
-            newsTitle = news[article].title;
-            newsDesc = news[article].description;
-            newsURL = news[article].url;
+            newsTitle = news[article].webTitle;
+            newsDesc = news[article].fields.trailText;
+            newsURL = news[article].webUrl;
 
-           contentArea.innerHTML += `
-           <a class="pure-u-24-24 pure-button newsItem" href="${newsURL}">
+            newsURL = newsURL.replace('https://www', 'https://amp');
+
+            contentArea.innerHTML += `
+            <a class="pure-u-24-24 pure-button newsItem" rel="amphtml" href="${newsURL}">
                 <p class="newsItem-title">${newsTitle}</p>
                 <p class="newsItem-desc">${newsDesc}</p>
             </a>`;
         }
 
-
     });
 
 };
+
+//http://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup-->
+document.addEventListener("DOMContentLoaded", function() { 
+    main();
+});

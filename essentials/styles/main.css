@@ -39,7 +39,7 @@ html, body {
 .appButtons:first-child {
     border-right: 1px solid white;
 }
-.loading {
+#loading {
     left: 50%;
     top: 50%;
     position: absolute;
