@@ -1,5 +1,8 @@
 * {
     margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 html, body {
     height: 100%;
@@ -12,12 +15,40 @@ html, body {
     background: #223145;
     color: white;
     text-align: center;
+    position: fixed;
+    height: 78px;
 }
-#contentArea {
-    min-height: 76vh;
-    background: #596371;
+#menuBanner .menuBanner-content {
+    height:100%;
 }
-#contentArea .newsItem {
+.menuBanner-content#menuBanner-content-refresh,
+.menuBanner-content#menuBanner-content-back {
+    line-height: 95px;
+}
+#menuBanner-content-refresh.refresh__rotate img{
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#newsContentArea, #weatherContentArea, #menuButtonArea {
+    min-height: 76px;
+    margin-top: 78px;
+    background: #223145;
+}
+#menuButtonArea .menuButtonArea-btn {
+    height: 50%;
+    color: white;
+    text-align: center;
+    line-height: 30vh;
+    border: 5px solid #596371;
+    border-radius: 5px;
+}
+#menuButtonArea .menuButtonArea-btn:last-child {
+    border-top: 0px;
+}
+
+#newsContentArea .newsItem {
     border: 2px solid #596371;
     white-space: pre-line;
     text-align: left;
@@ -27,7 +58,8 @@ html, body {
 }
 .appMenu {
     position: fixed;
-    top: 88.5vh;
+    bottom: 0vh;
+    background: white;
 }
 .appButtons {
     background: #223145;
@@ -37,11 +69,20 @@ html, body {
     line-height: 75px;
 }
 .appButtons:first-child {
-    border-right: 1px solid white;
+    border-right: 0.5px solid white;
 }
 #loading {
     left: 50%;
     top: 50%;
     position: absolute;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
+}
+
+/*ANIMATIONS*/
+@keyframes spin { 
+    from { 
+        transform: rotate(0deg); 
+    } to { 
+        transform: rotate(360deg); 
+    }
 }
