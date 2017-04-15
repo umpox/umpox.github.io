@@ -20,14 +20,12 @@
     <div class="pure-g" id="appContainer">
 
         <div class="pure-menu-horizontal" id="menuBanner">
-            <div class="pure-u-1-3 menuBanner-content" id="menuBanner-content-back" onclick="returnToMenu()">
-                <img src="resources/back.svg">
+            <div class="pure-u-1-3 menuBanner-content hidden" id="menuBanner-content-back" onclick="returnToMenu()">
             </div>
             <div class="pure-u-1-3 menuBanner-content" id="menuBanner-content-text">
                 <h1>Menu</h1>
             </div>
-            <div class="pure-u-1-3 menuBanner-content refresh__rotate" id="menuBanner-content-refresh" onclick="refreshPage()">
-                <img src="resources/refresh.svg">
+            <div class="pure-u-1-3 menuBanner-content refresh__rotate hidden" id="menuBanner-content-refresh" onclick="refreshPage()">
             </div>
         </div>
 
@@ -38,9 +36,15 @@
             <div class="pure-u-24-24 menuButtonArea-btn" onclick="loadWeatherData()">
                 <h1>Weather</h1>
             </div>
+            <div class="pure-u-24-24 menuButtonArea-btn" onclick="">
+                <h1>Saved</h1>
+            </div>
         </div>
 
         <div class="pure-u-5-5 hidden" id="newsContentArea">
+        </div>
+        
+        <div class="pure-u-5-5 hidden" id="articleContentArea">
         </div>
 
         <div class="pure-u-5-5 hidden" id="weatherContentArea">
