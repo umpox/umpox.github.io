@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<script>document.documentElement.className = 'js';</script>
+  		<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 	</head>
 	<body class="demo-6 loading">
 		<svg class="hidden">
@@ -24,6 +25,7 @@
 			</symbol>
 		</svg>
 		<main>
+			<a-scene>
 			<header class="codrops-header">
 				<div class="codrops-links">
 					<a class="codrops-icon codrops-icon--prev" href="https://tympanus.net/Development/ScrollSpiral/" title="Previous Demo"><svg class="icon icon--arrow"><use xlink:href="#icon-arrow"></use></svg></a>
@@ -44,6 +46,7 @@
 				<!-- The canvas where ThreeJs renders the WebGL -->
 				<canvas id="scene"></canvas>
 			</div>
+			</a-scene>
 		</main>
 		<script src="js/vendors/three.min.js"></script>
 		<script src="js/vendors/fulltilt.js"></script>
