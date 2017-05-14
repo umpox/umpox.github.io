@@ -78,6 +78,13 @@ Tunnel.prototype.handleEvents = function() {
     this.onMouseMove.bind(this),
     false
   );
+
+    // Listen to device orientation events
+    this.deviceOrientation = new FULLTILT.DeviceOrientation();
+    var self = this;
+    this.deviceOrientation.start(function(){
+      self.onDeviceOrientationChange();
+    });
 };
 
 Tunnel.prototype.onResize = function() {
@@ -92,6 +99,15 @@ Tunnel.prototype.onResize = function() {
 Tunnel.prototype.onMouseMove = function(e) {
   this.mouse.target.x = e.clientX;
   this.mouse.target.y = e.clientY;
+};
+
+Tunnel.prototype.onDeviceOrientationChange = function() {
+  // When the user move his device, change mouse target
+  var euler = this.deviceOrientation.getScreenAdjustedEuler();
+  if(euler.alpha > 0 && euler.beta < 90){
+      this.mouse.target.y = (Math.max(-1, Math.min(1, ((euler.beta - 20) / 30))));
+      this.mouse.target.x = -(Math.max(-1, Math.min(1, ((euler.gamma) / 30))));
+  }
 };
 
 Tunnel.prototype.update = function() {
@@ -233,6 +249,7 @@ window.onload = function() {
     function(texture) {
       document.body.classList.remove("loading");
       window.tunnel = new Tunnel(texture);
+      window.tunnel2 = new Tunnel(texture);
     }
   );
 };

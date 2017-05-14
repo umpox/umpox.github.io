@@ -309,6 +309,7 @@ function init() {
     'img/demo4/blood_cell.obj',
     function(obj) {
       window.tunnel = new Tunnel(obj);
+      window.tunnel2 = new Tunnel(obj);
     }
   );
 }
