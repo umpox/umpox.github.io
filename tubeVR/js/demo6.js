@@ -134,7 +134,12 @@ var leftCanvas = false;
     // Reset aspect of the camera
     this.camera.updateProjectionMatrix();
     // Update size of the canvas
-    this.renderer.setSize(ww2, wh);
+    if (leftCanvas === false) {
+      this.renderer.setSize(ww2, wh);
+    }
+    else {
+      this.renderer.setSize(ww2, (wh - 5));
+    }
   };
 
   Tunnel.prototype.onMouseMove = function(e) {
