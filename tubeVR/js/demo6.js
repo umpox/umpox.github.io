@@ -1,19 +1,7 @@
 AFRAME.registerComponent('vrmode', {
   init: function () {
     console.log('working!');
-  // Create a new loader
-  var loader = new THREE.TextureLoader();
-  // Prevent crossorigin issue
-  loader.crossOrigin = "Anonymous";
-  // Load the texture
-  loader.load("img/demo6/geometricPattern.png",
-              function(texture){
-    // When texture is loaded, init the scene
-    document.body.classList.remove("loading");
-    window.tunnelTexture = texture;
-    window.tunnel = new Tunnel();
 
-  });
   }
 });
 
@@ -225,4 +213,16 @@ AFRAME.registerComponent('vrmode', {
     window.requestAnimationFrame(this.render.bind(this));
   };
 
+  // Create a new loader
+  var loader = new THREE.TextureLoader();
+  // Prevent crossorigin issue
+  loader.crossOrigin = "Anonymous";
+  // Load the texture
+  loader.load("img/demo6/geometricPattern.png",
+              function(texture){
+    // When texture is loaded, init the scene
+    document.body.classList.remove("loading");
+    window.tunnelTexture = texture;
+    window.tunnel = new Tunnel();
 
+  });
