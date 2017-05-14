@@ -198,9 +198,9 @@ var leftCanvas = false;
     this.tubeGeometry.verticesNeedUpdate = true;
 
     // Update the points along the curve base on mouse position
-    this.curve.points[2].x = -this.mouse.position.x * 0.1;
-    this.curve.points[4].x = -this.mouse.position.x * 0.1;
-    this.curve.points[2].y = this.mouse.position.y * 0.1;
+    this.curve.points[2].x = -this.mouse.position.x * 0.5;
+    this.curve.points[4].x = -this.mouse.position.x * 0.5;
+    this.curve.points[2].y = this.mouse.position.y * 0.5;
     
     // Warn ThreeJs that the spline has changed
     this.splineMesh.geometry.verticesNeedUpdate = true;
