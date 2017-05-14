@@ -12,16 +12,19 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<script>document.documentElement.className = 'js';</script>
   		<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+		<script src="js/vendors/three.min.js"></script>
+		<script src="js/vendors/fulltilt.js"></script>
+		<script src="js/demo6.js"></script>
+
 	</head>
 	<body class="demo-6 loading">
 		<main>
 			<a-scene class="content">
 				<!-- The canvas where ThreeJs renders the WebGL -->
-				<canvas VRenabled id="scene"></canvas>
+				  <a-entity vrmode></a-entity>
+				  <canvas id="scene"></canvas>
 			</a-scene-->
 		</main>
-		<script src="js/vendors/three.min.js"></script>
-		<script src="js/vendors/fulltilt.js"></script>
-		<script src="js/demo6.js"></script>
+
 	</body>
 </html>
