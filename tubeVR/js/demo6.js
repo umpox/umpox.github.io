@@ -39,17 +39,18 @@ var leftCanvas = false;
         canvas: document.querySelector("#scene")
       });
       leftCanvas = true;
+      this.renderer.setSize(ww2, wh);
     }
     else {
       this.renderer = new THREE.WebGLRenderer({
         antialias:true,
         canvas: document.querySelector("#scene2")
-      });      
+      });
+      this.renderer.setSize((ww2-5), wh);      
     }
 
     
     // Set size of the renderer and its background color
-    this.renderer.setSize(ww, wh);
     this.renderer.setClearColor(0xe8e1bc);
 
     // Create a camera and move it along Z axis
@@ -135,10 +136,10 @@ var leftCanvas = false;
     this.camera.updateProjectionMatrix();
     // Update size of the canvas
     if (leftCanvas === false) {
-      this.renderer.setSize(ww2, wh);
+      this.renderer.setSize(ww, wh);
     }
     else {
-      this.renderer.setSize(ww2, (wh - 5));
+      this.renderer.setSize((ww2-5), wh);
     }
   };
 
