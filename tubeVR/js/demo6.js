@@ -217,4 +217,11 @@ loader.load("img/demo6/geometricPattern.png",
   document.body.classList.remove("loading");
   window.tunnelTexture = texture;
   window.tunnel = new Tunnel();
+
+  AFRAME.registerComponent('VRMode', {
+    init: function () {
+      this.el.setObject3D('VREnabled', new Tunnel());
+    }
+  });
+
 });
