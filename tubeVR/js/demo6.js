@@ -23,7 +23,7 @@ var leftCanvas = false;
 
   Tunnel.prototype.init = function() {
     // Define the speed of the tunnel
-    this.speed = 0.01;
+    this.speed = 0.04;
 
     // Store the position of the mouse
     // Default is center of the screen
@@ -230,7 +230,7 @@ var leftCanvas = false;
   // Prevent crossorigin issue
   loader.crossOrigin = "Anonymous";
   // Load the texture
-  loader.load("img/demo6/geometricPattern.png",
+  loader.load("img/demo6/stonePattern.jpg",
               function(texture){
     // When texture is loaded, init the scene
     document.body.classList.remove("loading");
