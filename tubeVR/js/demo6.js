@@ -23,7 +23,7 @@ var leftCanvas = false;
 
   Tunnel.prototype.init = function() {
     // Define the speed of the tunnel
-    this.speed = 0.04;
+    this.speed = 0.02;
 
     // Store the position of the mouse
     // Default is center of the screen
