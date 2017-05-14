@@ -54,7 +54,7 @@ var leftCanvas = false;
     this.renderer.setClearColor(0xe8e1bc);
 
     // Create a camera and move it along Z axis
-    this.camera = new THREE.PerspectiveCamera(15, ww / wh, 0.01, 1000);
+    this.camera = new THREE.PerspectiveCamera(15, ww2 / wh, 0.01, 1000);
     this.camera.position.z = 0.35;
 
     // Create an empty scene and define a fog for it
@@ -131,7 +131,7 @@ var leftCanvas = false;
     wh2 = wh * 0.5;
 
     // Update camera aspect
-    this.camera.aspect = ww / wh;
+    this.camera.aspect = ww2 / wh;
     // Reset aspect of the camera
     this.camera.updateProjectionMatrix();
     // Update size of the canvas
@@ -198,9 +198,9 @@ var leftCanvas = false;
     this.tubeGeometry.verticesNeedUpdate = true;
 
     // Update the points along the curve base on mouse position
-    this.curve.points[2].x = -this.mouse.position.x * 0.5;
-    this.curve.points[4].x = -this.mouse.position.x * 0.5;
-    this.curve.points[2].y = this.mouse.position.y * 0.5;
+    this.curve.points[2].x = -this.mouse.position.x * 0.2;
+    this.curve.points[4].x = -this.mouse.position.x * 0.2;
+    this.curve.points[2].y = this.mouse.position.y * 0.2;
     
     // Warn ThreeJs that the spline has changed
     this.splineMesh.geometry.verticesNeedUpdate = true;
