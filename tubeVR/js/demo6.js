@@ -1,10 +1,4 @@
-AFRAME.registerComponent('vrmode', {
-  init: function () {
-    console.log('working!');
-
-  }
-});
-
+var leftCanvas = false;
 
   // Get window dimension
   var ww = window.innerWidth,
@@ -39,10 +33,21 @@ AFRAME.registerComponent('vrmode', {
     };
 
     // Create a WebGL renderer
-    this.renderer = new THREE.WebGLRenderer({
-      antialias:true,
-      canvas: document.querySelector("#scene")
-    });
+    if (leftCanvas === false) {
+      this.renderer = new THREE.WebGLRenderer({
+        antialias:true,
+        canvas: document.querySelector("#scene")
+      });
+      leftCanvas = true;
+    }
+    else {
+      this.renderer = new THREE.WebGLRenderer({
+        antialias:true,
+        canvas: document.querySelector("#scene2")
+      });      
+    }
+
+    
     // Set size of the renderer and its background color
     this.renderer.setSize(ww, wh);
     this.renderer.setClearColor(0xe8e1bc);
@@ -225,5 +230,5 @@ AFRAME.registerComponent('vrmode', {
     document.body.classList.remove("loading");
     window.tunnelTexture = texture;
     window.tunnel = new Tunnel();
-
+    window.tunnel2 = new Tunnel();
   });
