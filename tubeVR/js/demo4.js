@@ -1,7 +1,7 @@
 var ww = window.innerWidth;
 var wh = window.innerHeight;
 var isMobile = ww < 500;
-
+var leftCanvas = false;
 function Tunnel(cell) {
   
   window.cell = cell.children[0];
@@ -25,11 +25,22 @@ Tunnel.prototype.init = function() {
     target: new THREE.Vector2(ww * 0.5, wh * 0.7)
   };
 
-  this.renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    canvas: document.querySelector("#scene")
-  });
-  this.renderer.setSize(ww, wh);
+  // Create a WebGL renderer
+  if (leftCanvas === false) {
+    this.renderer = new THREE.WebGLRenderer({
+      antialias:true,
+      canvas: document.querySelector("#scene")
+    });
+    leftCanvas = true;
+    this.renderer.setSize((ww/2), wh);
+  }
+  else {
+    this.renderer = new THREE.WebGLRenderer({
+      antialias:true,
+      canvas: document.querySelector("#scene2")
+    });
+    this.renderer.setSize((ww/2)-5, wh);      
+  }
 
   this.camera = new THREE.PerspectiveCamera(15, ww / wh, 0.01, 100);
   this.camera.rotation.y = Math.PI;
@@ -145,7 +156,13 @@ Tunnel.prototype.onResize = function() {
 
   this.camera.aspect = ww / wh;
   this.camera.updateProjectionMatrix();
-  this.renderer.setSize(ww, wh);
+
+  if (leftCanvas === false) {
+    this.renderer.setSize((ww/2), wh);
+  }
+  else {
+    this.renderer.setSize((ww/2)-5, wh);
+  }
 };
 
 Tunnel.prototype.onMouseMove = function(e) {

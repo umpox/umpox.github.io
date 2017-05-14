@@ -136,7 +136,7 @@ var leftCanvas = false;
     this.camera.updateProjectionMatrix();
     // Update size of the canvas
     if (leftCanvas === false) {
-      this.renderer.setSize(ww, wh);
+      this.renderer.setSize(ww2, wh);
     }
     else {
       this.renderer.setSize((ww2-5), wh);
