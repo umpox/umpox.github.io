@@ -129,7 +129,7 @@ AFRAME.registerComponent('vrmode', {
     // Reset aspect of the camera
     this.camera.updateProjectionMatrix();
     // Update size of the canvas
-    this.renderer.setSize(ww2, wh2);
+    this.renderer.setSize(ww2, wh);
   };
 
   Tunnel.prototype.onMouseMove = function(e) {
