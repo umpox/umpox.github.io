@@ -5,6 +5,7 @@ AFRAME.registerComponent('vrmode', {
   }
 });
 
+
   // Get window dimension
   var ww = window.innerWidth,
       wh = window.innerHeight;
@@ -128,7 +129,7 @@ AFRAME.registerComponent('vrmode', {
     // Reset aspect of the camera
     this.camera.updateProjectionMatrix();
     // Update size of the canvas
-    this.renderer.setSize(ww, wh);
+    this.renderer.setSize(ww2, wh2);
   };
 
   Tunnel.prototype.onMouseMove = function(e) {
