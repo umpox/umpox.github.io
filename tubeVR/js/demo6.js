@@ -146,7 +146,7 @@ var leftCanvas = false;
   Tunnel.prototype.onMouseMove = function(e) {
     // Save mouse X & Y position 
     this.mouse.target.x = (e.clientX - ww2) / ww2;
-    this.mouse.target.y = (wh2 - e.clientY) / wh2;
+    this.mouse.target.y = (e.clientY - wh2) / wh2;
   };
 
   Tunnel.prototype.onDeviceOrientationChange = function() {
