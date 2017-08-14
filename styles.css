@@ -1,0 +1,120 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#main-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#main-text {
+  color: white;
+  font-family: Helvetica;
+}
+
+#main-icons {
+  list-style-type: none;
+  padding: 0px;
+}
+
+#main-icons li:first-child {
+  margin-left: 0px;
+}
+
+#main-icons li {
+  display: inline-block;
+  font-size: 32px;
+  margin: 0px 7px;
+}
+
+#main-icons li:hover {
+  border-bottom: 1px solid white;
+}
+
+#main-icons li img{
+  width: 25px;
+}
+
+.pageCol {
+  padding: 5vh 0 0 3vh;
+}
+
+.pageContent .pageCol {
+  padding-left: 10vh;
+  padding-right: 10vh;
+}
+
+
+/*Main app areas*/
+.sideMenu {
+  background: #00796B;
+}
+.pageContent {
+  background: #B2DFDB;
+}
+
+
+/* Tiles */
+.tileRow {
+  margin-bottom: 5vh;
+}
+
+.navigationTile {
+  width: 100%;
+  height: 26vh;
+  border-radius: 10px;
+  background: #00796B;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  margin: 0px;
+}
+
+.navigationTile:hover {
+  transform: scale(1.1);
+}
+
+.navigationTile #main-text {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-device-width : 768px) {
+  .sideMenu #main-text {
+    font-size: 12px;
+  }
+
+  #main-icons li img{
+    width: 20px;
+  }
+
+  #main-icons {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-device-width: 568px) {
+  html, body, #main-container {
+    overflow: auto;
+  }
+
+  .navigationTile {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .tileRow {
+    margin-bottom: 0vh;
+  }
+
+  .pageContent .pageCol {
+      padding: 1vh 3vh;
+  }
+
+  .sideMenu .pageCol {
+    padding-top: 0vh;
+  }
+}
