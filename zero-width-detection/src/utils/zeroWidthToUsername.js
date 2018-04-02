@@ -5,7 +5,7 @@ const zeroWidthToBinary = string => (
     } else if (char === '‌') { // invisible &#8204;
       return '0';
     }
-    return ' '; // final scenario: &#8205;
+    return ' '; // split up binary with spaces;
   }).join('')
 );
 
